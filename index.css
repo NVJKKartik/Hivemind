@@ -12,6 +12,7 @@ height: 107px;
 left: 82px;
 top: 82px;
 
+margin-top: 0;
 /* Text */
 
 font-family: Lexend;
@@ -34,7 +35,7 @@ position: absolute;
 width: 378px;
 height: 96px;
 left: 70px;
-top: 730px;
+top: 600px;
 
 background: #FFFFFF;
 border-radius: 48.4245px;
