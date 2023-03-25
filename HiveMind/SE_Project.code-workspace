@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../Software Engineering/SE_Project"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "HiveMind",
+		"liveServer.settings.port": 5501
+	}
+}
