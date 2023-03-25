@@ -1,0 +1,109 @@
+/* General styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    display: block;
+    padding: 0.5rem;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  form input,
+  form textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  form button[type="submit"] {
+    background-color: #333;
+    border: none;
+    color: #fff;
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  form button[type="submit"]:hover {
+    background-color: #444;
+  }
+  
+  .topic {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .topic h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .topic p {
+    margin-bottom: 1rem;
+  }
+  
+  .topic a {
+    display: block;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .topic a:hover {
+    text-decoration: underline;
+  }
+  
