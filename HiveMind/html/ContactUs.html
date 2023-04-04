@@ -1,0 +1,42 @@
+/css/<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Us - HiveMind</title>
+	<link rel="stylesheet" type="text/css" href="/css/ContactUs.css">
+</head>
+<body>
+
+	<header>
+		<a href="/html/HomePage.html"><h1>HiveMind</h1></a>
+		<nav>
+			<ul>
+				<li><a href="/html/Dashboard.html">Dashboard</a></li>
+				<li><a href="/html/Profile.html">Profile</a></li>
+				<li><a href="/html/Resources.html">Resources</a></li>
+				<li><a href="/html/Settings.html">Settings</a></li>
+				<li><a href="/html/HomePage.html">Log Out</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<h2>Contact Us:</h2>
+		<form method="post" action="contact.php">
+			<label for="name">Name</label>
+			<input type="text" name="name" id="name" required>
+			<label for="email">Email</label>
+			<input type="email" name="email" id="email" required>
+			<label for="subject">Subject</label>
+			<input type="text" name="subject" id="subject" required>
+			<label for="message">Message</label>
+			<textarea name="message" id="message" rows="5" required></textarea>
+			<button type="submit" class="btn">Send Message</button>
+		</form>
+	</main>
+
+	<footer>
+		<p>&copy; 2023 HiveMind. All Rights Reserved.</p>
+	</footer>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+/* Global Styles */
+
+body {
+	font-family: Arial, sans-serif;
+	color:white;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+	background-image: url("/images/dash_back.jpg");
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+nav a{
+	display: inline-block;
+	padding: 9px 25px;
+	border: 0;
+	text-decoration: none;
+	border-radius: 1px;
+	background-color: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255,255,255,0.1);
+	backdrop-filter: blur(30px);
+	color: rgba(255,255,255,0.8);
+	font-size: 14px;
+	letter-spacing: 2px;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+nav a:hover{
+	background-color: rgba(255,255,255,0.2);
+}
+
+header {
+	/* background-color: #222; */
+	color: #fff;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px;
+}
+
+nav ul {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	list-style: none;
+	margin: 0 20px;
+}
+
+nav a {
+	font-size: 1.2em;
+}
+
+main {
+	padding: 20px;
+}
+
+h2 {
+	margin-top: 0;
+}
+
+form label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+form input[type="text"], form input[type="email"], form input[type="password"] {
+	display: block;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: none;
+	border-radius: 5px;
+	width: 100%;
+}
+
+form input[type="submit"] {
+	display: inline-block;
+	padding: 24px 32px;
+	border: 0;
+	text-decoration: none;
+	border-radius: 1px;
+	background-color: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255,255,255,0.1);
+	backdrop-filter: blur(30px);
+	color: rgba(255,255,255,0.8);
+	font-size: 14px;
+	letter-spacing: 2px;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+form input[type="submit"]:hover {
+	background-color: rgba(255,255,255,0.2);
+}
+
+/* Sign Up Page Styles */
+
+form {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+form div{
+	display: flex;
+	padding: 30px 25px;
+	border: 0;
+	text-decoration: none;
+	border-radius: 1px;
+	background-color: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255,255,255,0.1);
+	backdrop-filter: blur(30px);
+	color: rgba(255,255,255,0.8);
+	font-size: 14px;
+	letter-spacing: 2px;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+
+footer{
+	position:relative;
+	bottom:10%;
+	text-align: center;
+	border: 1px dashed rgba(255,255,255,0.2);
+}

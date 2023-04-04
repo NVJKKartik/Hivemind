@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up - HiveMind</title>
+	<link rel="stylesheet" type="text/css" href="/css/SignUp.css">
+</head>
+<body>
+
+	<header>
+		<a href="/html/HomePage.html"><h1>HiveMind</h1></a>
+		<nav>
+			<ul>
+				<li><a href="/html/HomePage.html">Home</a></li>
+				<li><a href="/html/ContactUs.html">About</a></li>
+				<li><a href="/html/ContactUs.html">Contact Us</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<form action="signup.php" method="POST">
+		<div>
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" required>
+		</div>
+		<div>
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required>
+		</div>
+		<div>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" required>
+		</div>
+		<div>
+			<label for="confirm-password">Confirm Password:</label>
+			<input type="password" id="confirm-password" name="confirm-password" required>
+		</div>
+			<input type="submit" value="Sign Up">
+		</form>
+	</main>
+
+	<footer>
+		<p>&copy; 2023 HiveMind. All Rights Reserved.</p>
+	</footer>
+
+</body>
+</html>

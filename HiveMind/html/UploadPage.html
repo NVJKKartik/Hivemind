@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upload Your Study Materials - HiveMind</title>
+	<link rel="stylesheet" type="text/css" href="/css/UploadPage.css">
+</head>
+<body>
+
+	<header>
+		<a href="/html/HomePage.html"><h1>HiveMind</h1></a>
+		<nav>
+			<ul>
+				<li><a href="/html/Dashboard.html">Dashboard</a></li>
+				<li><a href="/html/Profile.html">Profile</a></li>
+				<li><a href="/html/Resources.html">Resources</a></li>
+				<li><a href="/html/Settings.html">Settings</a></li>
+				<li><a href="/html/HomePage.html">Log Out</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<h2>Upload Your Study Materials</h2>
+		<form method="post" action="upload.php" enctype="multipart/form-data">
+			<label for="title">Title:</label>
+			<input type="text" name="title" id="title" required>
+			<label for="description">Description:</label>
+			<textarea name="description" id="description" rows="5" required></textarea>
+			<label for="file">Choose a file to upload:</label>
+			<div><input type="file" name="file" id="file" required></div>
+			<button type="submit" class="btn">Upload</button>
+		</form>
+	</main>
+
+	<footer>
+		<p>&copy; 2023 HiveMind. All Rights Reserved.</p>
+	</footer>
+
+</body>
+</html>
