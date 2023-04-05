@@ -11,7 +11,8 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    password: String
+    password: String,
+    joinDate: Date
 });
 
 exports.User = mongoose.model("User", userSchema);
