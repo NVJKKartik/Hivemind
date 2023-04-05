@@ -29,5 +29,5 @@ exports.initializingPassport = (passport) => {
 
 exports.isAuthenticated = (req, res, done) => {
     if (req.user) return done();
-    res.redirect("/SignUp");
+    res.redirect("/Login");
 };
