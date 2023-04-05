@@ -20,6 +20,16 @@ header {
 	/* background-color: #333; */
 }
 
+header h1 {
+	color: rgba(255,255,255,0.5);
+	transition: all 0.5s;
+}
+
+header h1:hover {
+	color: rgba(255,255,255,0.9);
+	cursor: pointer;
+}
+
 nav ul {
 	list-style: none;
 	display: flex;
