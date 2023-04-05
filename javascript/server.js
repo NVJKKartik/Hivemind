@@ -59,6 +59,12 @@ app.get("/Logout", (req, res, done) => {
     });
 });
 
+app.post("/html/pdf.html", (req, res) => {
+    res.redirect("/html/pdf.html");
+});
+
+
+
 app.listen(3000, () => {
     console.log("listening on 3000");
 });
