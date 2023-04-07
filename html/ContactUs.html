@@ -1,4 +1,4 @@
-/css/<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Contact Us - HiveMind</title>
@@ -6,18 +6,25 @@
 </head>
 <body>
 
-	<header>
+	<!-- <header>
 		<a href="/html/HomePage.html"><h1>HiveMind</h1></a>
-		<nav>
-			<ul>
-				<li><a href="/html/Dashboard.html">Dashboard</a></li>
-				<li><a href="/html/Profile.html">Profile</a></li>
-				<li><a href="/html/Resources.html">Resources</a></li>
-				<li><a href="/html/Settings.html">Settings</a></li>
-				<li><a href="/html/HomePage.html">Log Out</a></li>
-			</ul>
-		</nav>
-	</header>
+	</header> -->
+
+	<nav>
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="/html/HomePage.html"><i class="fa fa-fw fa-home"> </i>Home</a>
+			<a href="/html/StudyGroup.html"><i class="fa fa-fw fa-search"></i>Search</a>
+			<a href="/html/Resources.html"><i class="fa fa-fw fa-envelope"></i>Resources</a>
+			<a href="/html/ContactUs.html"><i class="fa fa-fw fa-user"></i>Contact Us</a>
+		  </div>
+		  
+		  <div class="container" onclick="openNav()">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+		  </div>
+	  </nav>
 
 	<main>
 		<h2>Contact Us:</h2>
@@ -37,6 +44,7 @@
 	<footer>
 		<p>&copy; 2023 HiveMind. All Rights Reserved.</p>
 	</footer>
+	<script src="/javascript/contactus.js"></script>
 
 </body>
 </html>
