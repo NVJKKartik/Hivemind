@@ -41,7 +41,7 @@ nav ul {
   }
   
   .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 14.5px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     color: white;
@@ -58,7 +58,7 @@ nav ul {
   .sidenav .closebtn {
     position: absolute;
     top: 0;
-    right: 50px;
+    right: 0;
     font-size: 30px;
     margin-left: 10px;
   }
@@ -75,6 +75,7 @@ nav ul {
     .sidenav a {font-size: 18px;}
   }
   .container {
+	color:white;
     display: inline-block;
     cursor: pointer;
   }
@@ -101,7 +102,7 @@ nav li {
 	margin: 0 20px;
 }
 
-nav a {
+/* nav a {
 	display: inline-block;
 	padding: 10px 16px;
 	border: 0;
@@ -119,7 +120,7 @@ nav a {
 
 nav a:hover {
 	background-color: rgba(255,255,255,0.2);
-  }
+  } */
 
 main {
 	padding: 20px;
@@ -216,6 +217,30 @@ h2 {
 }
 .quiz-history p{
 	color:azure;
+}
+
+.charts{
+	display: flex;
+	color:white;
+	text-align: center;
+}
+#myChart{
+	display: flex;
+	flex-direction: row;
+	color:white;
+	font-size: large;
+	width: 750px;
+	margin: 0 auto; 
+	text-align: left;
+}
+#pieChart{
+	display:flex;
+	flex-direction: column;
+	color:white;
+	font-size: large;
+	width: 750px;
+	margin: 0 auto; 
+	text-align: left;
 }
 
 footer{

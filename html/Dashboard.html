@@ -33,6 +33,7 @@
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
+			<p>MENU</p>
           </div>
 	  </nav>
 	<main>
@@ -54,15 +55,12 @@
 				<p>You've uploaded <span>10 study materials</span> this week.</p>
 			</div>
 		</section>
-		<section class="study-group">
-			<h2>Study Group</h2>
-			<p>Here are the study groups you've joined on HiveMind:</p>
-			<ul>
-				<li>Group 1 - Topic: Physics</li>
-				<li>Group 2 - Topic: History</li>
-				<li>Group 3 - Topic: Computer Science</li>
-			</ul>
-		</section>
+
+		<div class="charts">
+			<canvas id="myChart" style="width:100%;max-width:750px"></canvas>
+			<canvas id="pieChart" style="width:100%;max-width:750px"></canvas>
+		</div>
+
 		<section class="quiz-history">
 			<h2>Quiz History</h2>
 			<p>Here are the quizzes you've completed on HiveMind:</p>
@@ -93,10 +91,22 @@
 				</tbody>
 			</table>
 		</section>
+		<section class="study-group">
+			<h2>Study Group</h2>
+			<p>Here are the study groups you've joined on HiveMind:</p>
+			<ul>
+				<li>Group 1 - Topic: Physics</li>
+				<li>Group 2 - Topic: History</li>
+				<li>Group 3 - Topic: Computer Science</li>
+			</ul>
+		</section>
+
 	</main>
 	<footer>
 		<p>&copy; 2023 HiveMind. All rights reserved.</p>
 	</footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 	<script src="/javascript/dashboard.js"> </script>
 </body>
 </html>

@@ -9,7 +9,7 @@
 <body>
 	<header>
 		<img src="/images/logo.jpg">
-		<h1>HiveMind</h1>
+		<!-- <h1>HiveMind</h1> -->
 		<nav>
 			<ul>
 				<li><a href="/html/Dashboard.html">Dashboard</a></li>
@@ -28,32 +28,43 @@
 			<p>Collaborate with students around the world to learn faster and more efficiently.</p>
 			<a href="/SignUp" class="btn">Sign Up Now</a>
 		</section>
-		
+		<h2>Our Features</h2>
 		<section class="features">
-			<h2>Our Features</h2>
+			
 			<div class="feature">
-				<img src="/images/collab.jpg" alt="Collaboration">
+				<img src="/images/col.png" alt="Collaboration">
 				<h4>Collaboration</h4>
-				<p>Connect with other students studying the same topics and share knowledge.</p>
+				<p>Connect with other students studying the same <br>topics and share knowledge.</p>
 			</div>
 			<div class="feature">
 				<img src="/images/dashboard.jpg" alt="Dashboard">
 				<h4>Dashboard</h4>
-				<p>Track your study time and progress, and take quizzes to assess your knowledge.</p>
+				<p>Track your study time and progress, and take <br>quizzes to assess your knowledge.</p>
 			</div>
 			<div class="feature">
 				<img src="/images/resources.jpg" alt="Resources">
 				<h4>Resources</h4>
-				<p>Access a wide range of study materials, including notes, articles, and videos.</p>
+				<p>Access a wide range of study materials, including<br> notes, articles, and videos.</p>
 			</div>
             <div class="feature">
 				<img src="/images/Concentration.jpg" alt="Concentration">
 				<h4>Concentration</h4>
-				<p> Give your 100% concentration while studying else we will alert you with an alarm if you move out of the screen.</p>
+				<p> Give your 100% concentration while studying else we will alert <br>you with an alarm if you move out of the screen.</p>
 			</div>
+			<div class="feature">
+				<img src="/images/quiz.jpg" alt="Quizzes">
+				<h4>Quizzes</h4>
+				<p> Interactive quizzes that allow users to test their knowledge and<br> receive instant feedback on their performance.</p>
+			</div>
+			<div class="feature">
+				<img src="/images/motivation.jpg" alt="Motivation">
+				<h4>Motivation</h4>
+				<p>Personalized motivation tools that help users stay motivated and engaged, such as daily affirmations, inspirational quotes, and reminders.</p>
+			</div>
+
 		</section>
 		
-		<section class="testimonials">
+		<!-- <section class="testimonials">
 			<h3>What Our Users Are Saying</h3>
 			<div class="testimonial">
 				<p>"I've been using HiveMind for a few weeks now and I've already noticed a big difference in my grades. Collaborating with other students has helped me understand the material better and the quizzes have helped me identify areas where I need to study more."</p>
@@ -63,11 +74,43 @@
 				<p>"HiveMind is an amazing platform for studying. It's user-friendly, has great resources, and the collaboration feature is really helpful. I've connected with students from all over the world and it's been a great learning experience."</p>
 				<p class="user">- John Smith, High School Student</p>
 			</div>
-		</section>
+		</section> -->
 	</main>
+
+		<!-- Slideshow container -->
+<div class="slideshow-container">
+
+	<!-- Full-width slides/quotes -->
+	<div class="mySlides">
+	  <q>I love you the more in that I believe you had liked me for my own sake and for nothing else</q>
+	  <p class="author">- John Keats</p>
+	</div>
+  
+	<div class="mySlides">
+	  <q>But man is not made for defeat. A man can be destroyed but not defeated.</q>
+	  <p class="author">- Ernest Hemingway</p>
+	</div>
+  
+	<div class="mySlides">
+	  <q>I have not failed. I've just found 10,000 ways that won't work.</q>
+	  <p class="author">- Thomas A. Edison</p>
+	</div>
+  
+	<!-- Next/prev buttons -->
+	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+	<a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  
+  <!-- Dots/bullets/indicators -->
+  <div class="dot-container">
+	<span class="dot" onclick="currentSlide(1)"></span>
+	<span class="dot" onclick="currentSlide(2)"></span>
+	<span class="dot" onclick="currentSlide(3)"></span>
+  </div>
 	
 	<footer>
 		<p>&copy; 2023 HiveMind. All rights reserved.</p>
 	</footer>
+	<script src="/javascript/homepage.js"></script>
 </body>
 </html>

@@ -8,3 +8,16 @@ topicForm.addEventListener('submit', (event) => {
   const selectedTopic = topicForm.querySelector('input[name="topic"]:checked').value;
   window.location.href = `${selectedTopic}quiz.html`;
 });
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+function myFunction(x) {
+    x.classList.toggle("change");
+}
