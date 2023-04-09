@@ -12,6 +12,9 @@ const userSchema = new mongoose.Schema({
         unique: true
     },
     password: String,
+    img : {
+        type: Buffer
+    },
     joinDate: Date
 });
 
