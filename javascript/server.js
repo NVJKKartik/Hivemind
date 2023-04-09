@@ -41,14 +41,14 @@ app.post("/SignUp", async (req, res) => {
     if (user) return res.status(400).send("User already exists!");
     req.body.joinDate = new Date();
     const newUser = await User.create(req.body);
-    res.redirect('/Profile/' + newUser.username.slice(0, newUser.username.indexOf('@')));
+    res.redirect('/Profile');
 });
 
 app.post("/Login", passport.authenticate("local", {failureRedirect: "/Login"}), (req, res) => {
-    res.redirect('/Profile/' + req.user.username.slice(0, req.user.username.indexOf('@')));
+    res.redirect('/Profile');
 });
 
-app.get("/Profile/*", isAuthenticated, (req, res) => {
+app.get("/Profile", isAuthenticated, (req, res) => {
     res.render("Profile", req.user);
 });
 
@@ -59,11 +59,21 @@ app.get("/Logout", (req, res, done) => {
     });
 });
 
+app.get("/Dashboard", isAuthenticated, (req, res) => {
+    res.redirect("/html/Dashboard.hbs", req.user);
+});
+
 app.post("/html/pdf.html", (req, res) => {
     res.redirect("/html/pdf.html");
 });
 
+app.get("/Settings", isAuthenticated, (req, res) => {
+    res.render("Settings", req.user);
+});
 
+app.post("/Settings", (req, res) => {
+    res.redirect("/Profile");
+});
 
 app.listen(3000, () => {
     console.log("listening on 3000");
