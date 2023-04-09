@@ -14,6 +14,7 @@ initializingPassport(passport);
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, '../')));
+app.use(express.static('public'));
 app.use(expressSession({
     secret: "secret",
     resave: false,
@@ -60,7 +61,7 @@ app.get("/Logout", (req, res, done) => {
 });
 
 app.get("/Dashboard", isAuthenticated, (req, res) => {
-    res.redirect("/html/Dashboard.hbs", req.user);
+    res.render("Dashboard", req.user);
 });
 
 app.post("/html/pdf.html", (req, res) => {
