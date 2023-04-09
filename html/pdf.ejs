@@ -30,7 +30,7 @@
       <div class="pdf-container">
         <div class="pdf-content">
           <% pdfs.forEach((pdf) => { %>
-            <embed src="/pdf/<%= pdf._id %>" type="<%= pdf.contentType %>" width="100%" height="600px">
+            <embed src="/uploads/<%= pdf._id %>" type="<%= pdf.contentType %>" width="50%" height="600px">
           <% }) %>
         </div>
       </div>
