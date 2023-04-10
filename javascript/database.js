@@ -17,3 +17,15 @@ const userSchema = new mongoose.Schema({
     },
     joinDate: Date
 });
+
+const pdfSchema = new mongoose.Schema({
+    filename: String,
+    path: String,
+    uploadDate: Date,
+    pdf: {
+        type: Buffer,
+    }
+  });
+
+exports.User = mongoose.model("User", userSchema);
+exports.pdfSchema = mongoose.model("PDF",pdfSchema);
