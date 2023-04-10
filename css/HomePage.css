@@ -1,0 +1,312 @@
+head {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+
+body {
+	/* background-color: #000000; */
+	background-image: url("/images/dash_back.jpg");
+	color: #ffffff;
+	scroll-behavior: smooth;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+	color:white
+	/* background-color: #333; */
+}
+header img{
+	width: 100px;
+	height: 100px;
+	padding-left: 4%;
+}
+
+header h1 {
+	color: rgba(255,255,255);
+	transition: all 0.5s;
+}
+
+header h1:hover {
+	color: rgba(255,255,255,0.9);
+	cursor: pointer;
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+}
+
+nav li {
+	margin-right: 1em;
+}
+
+/* nav a {
+	text-decoration: none;
+	color: #fff;
+}
+nav a:hover{
+	font-size: 20px;
+	color:white;
+	background-color: rgb(43, 17, 42);
+	cursor:pointer;
+} */
+
+nav a {
+	display: flex;
+	padding: 20px 32px;
+	border: 0;
+	text-decoration: none;
+	border-radius: 1px;
+	background-color: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255,255,255,0.1);
+	backdrop-filter: blur(30px);
+	color: rgba(255,255,255,0.8);
+	font-size: 14px;
+	letter-spacing: 2px;
+	cursor: pointer;
+	text-transform: uppercase;
+	
+  }
+ 
+nav a:hover {
+	background-color: rgba(255,255,255,0.2);
+  }
+
+.hero{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 5em 0;
+	/* background-color: #eee; */
+}
+
+.hero a{
+	display: inline-block;
+	padding: 24px 32px;
+	border: 0;
+	text-decoration: none;
+	border-radius: 1px;
+	background-color: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255,255,255,0.1);
+	backdrop-filter: blur(30px);
+	color: rgba(255,255,255,0.8);
+	font-size: 14px;
+	letter-spacing: 2px;
+	cursor: pointer;
+	text-transform: uppercase;
+	align-items:center;
+}
+
+.hero a:hover{
+	background-color: rgba(255,255,255,0.2);
+	color:white;
+	width:125px;
+	height: 12.5px;
+}
+
+
+
+.hero h2 {
+	font-size: 3em;
+	margin-bottom: 0.5em;
+	color:white;
+}
+
+.hero p {
+	font-size: 1.5em;
+	margin-bottom: 2em;
+	color:lightgrey;
+}
+
+.btn {
+	display: inline-block;
+	padding: 1em 2em;
+	background-color: #333;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	cursor: pointer;
+}
+.btn:hover{
+	background-color: #f0ecec;
+	cursor: pointer;
+	padding:1.8%;
+	color:black;
+}
+
+.feature {
+	display: inline-block;
+	justify-content: space-between;
+	/* background-color: #fff; */
+	padding: 15px 15px;
+	border: 0;
+	text-decoration: none;
+	border-radius: 1px;
+	background-color: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255,255,255,0.1);
+	backdrop-filter: blur(30px);
+	color: rgba(255,255,255,0.8);
+	font-size: 14px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	width:440px;
+	height:350px;
+}
+
+.features h2 {
+	display: inline;
+	font-size: 2.5em;
+	text-align: center;
+	margin-bottom: 2em;
+}
+
+/* .feature {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	flex-basis: 30%;
+	margin-bottom: 2em;
+	color:lightyellow;
+} */
+
+.feature img {
+	height: 120px;
+	width: 120px;
+	margin-bottom: 1em;
+	background-color: rgba(255,255,255,0);
+
+}
+
+.feature h4 {
+	font-size: 1.5em;
+	margin-bottom: 0.5em;
+}
+
+.feature p {
+	font-size: 1em;
+}
+
+.testimonials {
+	padding: 5em 0;
+	color:lightyellow;
+	backdrop-filter: blur;
+	box-shadow: 10px 10px 10px 10px rgba(255,255,255,0.3);
+	/* background-color: #eee; */
+}
+
+.testimonials h3 {
+	font-size: 2.5em;
+	text-align: center;
+	margin-bottom: 2em;
+	color:white;
+}
+
+.testimonial {
+	/* background-color: #fff; */
+	padding: 2em;
+	margin-bottom: 2em;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.testimonial p {
+	font-size: 1.5em;
+	margin-bottom: 1em;
+}
+
+.testimonial .user {
+	font-size: 1em;
+	text-align: right;
+}
+
+/* Slideshow container */
+.slideshow-container {
+	position: relative;
+
+  }
+  
+  /* Slides */
+  .mySlides {
+	display: none;
+	padding: 80px;
+	text-align: center;
+	font-size: 20px;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	margin-top: -30px;
+	padding: 16px;
+	color: #888;
+	font-weight: bold;
+	font-size: 20px;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+	position: absolute;
+	right: 0;
+	border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+	background-color: rgba(0,0,0,0.8);
+	color: white;
+  }
+  
+  /* The dot/bullet/indicator container */
+  .dot-container {
+	background-color: rgba(255,255,255,0.1);
+	text-align: center;
+	padding: 20px;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+  }
+  
+  /* Add a background color to the active dot/circle */
+  .active, .dot:hover {
+	background-color: #717171;
+  }
+  
+  /* Add an italic font style to all quotes */
+  q {font-style: italic;}
+  
+  /* Add a blue color to the author */
+  .author {color: cornflowerblue;}
+
+footer {
+	/* background-color: #333; */
+	padding: 1em;
+	text-align: center;
+	color: #fff;
+	font-size: 0.8em;
+	border: 1px dashed rgba(255,255,255,0.1);
+}
+
+footer:hover{
+	color:lightyellow;
+}

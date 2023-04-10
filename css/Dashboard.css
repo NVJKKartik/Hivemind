@@ -1,0 +1,250 @@
+/* Global Styles */
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+	background-image: url(/images/dash_back.jpg);
+}
+header {
+	/* background-color: #222; */
+	color: #fff;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px;
+}
+
+nav ul {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+}
+
+.sidenav {
+	background-image: url("/images/dash_back.jpg");
+    height: 100%; 
+    width: 0; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0; 
+    overflow-x: hidden; 
+    padding-top: 60px; 
+    transition: 0.5s; 
+	color:white;
+  }
+  
+  .sidenav a {
+    padding: 14.5px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: rgba(255,255,255,0.2);
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    margin-left: 10px;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  .container {
+	color:white;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #ffffff;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+
+nav li {
+	list-style: none;
+	margin: 0 20px;
+}
+
+/* nav a {
+	display: inline-block;
+	padding: 10px 16px;
+	border: 0;
+	text-decoration: none;
+	border-radius: 1px;
+	background-color: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255,255,255,0.1);
+	backdrop-filter: blur(30px);
+	color: rgba(255,255,255,0.8);
+	font-size: 14px;
+	letter-spacing: 2px;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+nav a:hover {
+	background-color: rgba(255,255,255,0.2);
+  } */
+
+main {
+	padding: 20px;
+}
+
+h2 {
+	margin-top: 0;
+}
+
+/* Dashboard Styles */
+
+/* .overview {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 50px;
+} */
+
+.overview div {
+	/* background-color: #222; */
+	color: #fff;
+	padding: 20px;
+	width: 25%;
+}
+
+.overview {
+	display: flex;
+	padding: 24px 32px;
+	border: 0;
+	text-decoration: none;
+	border-radius: 1px;
+	background-color: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255,255,255,0.1);
+	backdrop-filter: blur(30px);
+	color: rgba(255,255,255,0.8);
+	font-size: 14px;
+	letter-spacing: 2px;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+.overview p {
+	margin-bottom: 0;
+}
+
+.overview span {
+	font-weight: bold;
+}
+
+.study-group {
+	margin-bottom: 50px;
+}
+
+.study-group p{
+	color: white;
+}
+.study-group h2{
+	font-weight: 800;
+	font-family: "Times New Roman";
+	color:bisque;
+}
+
+.study-group ul {
+	margin: 0;
+	padding: 0;
+	color:white;
+}
+
+.study-group li {
+	list-style: none;
+	margin: 0 0 10px 0;
+	color:white;
+}
+.quiz-history h2{
+	color:bisque;
+}
+.quiz-history table {
+	border-collapse: collapse;
+	width: 100%;
+	color:white;
+}
+
+.quiz-history th, .quiz-history td {
+	border: 1px solid #222;
+	padding: 10px;
+	text-align: left;
+}
+
+.quiz-history th {
+	/* background-color: #222; */
+	color: #fff;
+	font-weight: bold;
+}
+.quiz-history p{
+	color:azure;
+}
+
+.charts{
+	display: flex;
+	color:white;
+	text-align: center;
+}
+#myChart{
+	display: flex;
+	flex-direction: row;
+	color:white;
+	font-size: large;
+	width: 750px;
+	margin: 0 auto; 
+	text-align: left;
+}
+#pieChart{
+	display:flex;
+	flex-direction: column;
+	color:white;
+	font-size: large;
+	width: 750px;
+	margin: 0 auto; 
+	text-align: left;
+}
+
+footer{
+	color:white;
+	align-self: right;
+	border: 1px dashed rgba(255,255,255,0.1);
+}

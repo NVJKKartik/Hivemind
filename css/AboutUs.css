@@ -1,0 +1,197 @@
+/* Global Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    color:white;
+    background-image: url("/images/dash_back.jpg");
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    color:white
+  }
+
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  nav li {
+    margin: 0 1em;
+  }
+  
+  nav a {
+  display: inline-block;
+	padding: 12px 32px;
+	border: 1 dashed rgba(255,255,255,0.1);
+	text-decoration: none;
+	border-radius: 0px;
+	background-color: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255,255,255,0.1);
+	backdrop-filter: blur(30px);
+	color: rgba(255,255,255,0.8);
+	font-size: 18px;
+	letter-spacing: 2px;
+	cursor: pointer;
+  }
+  nav a:hover{
+    background-color: rgba(255,255,255,0.2);
+  }
+  
+  main {
+    padding: 2em;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+  
+  p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin-bottom: 2em;
+  }
+  
+  .profile-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .profile {
+    flex: 1 1 20%;
+    margin: 1em;
+    text-align: center;
+  }
+  
+  .developers {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .developers h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+  
+  .developer {
+    display: inline-block;
+    width: 250px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    vertical-align: top;
+    display: inline-block;
+    padding: 12px 32px;
+    border: 1 dashed rgba(255,255,255,0.1);
+    text-decoration: none;
+    border-radius: 0px;
+    background-color: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(30px);
+    color: rgba(255,255,255,0.8);
+    font-size: 18px;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+  
+  .developer img {
+    width: 150px;
+    height: 180px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .developer h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .developer p {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+  }
+  
+  
+  footer {
+    border: 1px dashed rgba(255,255,255,0.2);
+    text-align: center;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .footer-container li {
+    margin-right: 1em;
+  }
+
+  main h1{
+    text-align: center;
+  }
+  main p{
+    display: inline-block;
+    padding: 25px 40px;
+    border: 1 dashed rgba(255,255,255,0.1);
+    text-decoration: none;
+    border-radius: 0px;
+    background-color: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(30px);
+    color: rgba(255,255,255,0.8);
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  
+  /* Page-Specific Styles */
+  
+  /* main {
+    min-height: 100vh;
+  } */
+  /* main p{
+    display: inline-block;
+    padding: 12px 32px;
+    border: 1 dashed rgba(255,255,255,0.1);
+    text-decoration: none;
+    border-radius: 0px;
+    background-color: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(30px);
+    color: rgba(255,255,255,0.8);
+    font-size: 18px;
+    letter-spacing: 2px;
+    cursor: pointer;
+  } */
+  
+  /* .profile-container {
+    justify-content: center;
+    align-items: center;
+  } */
+  
+  @media (max-width: 768px) {
+    .profile {
+      flex: 1 1 45%;
+    }
+  }
+  

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Maths Study Group - Discussion Forum</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+            background-image: url("/images/dash_back.jpg");
+            color:white;
+		}
+		header {
+			color: white;
+			padding: 10px;
+			text-align: center;
+		}
+		h1 {
+			margin: 0;
+			font-size: 36px;
+		}
+		nav {
+			overflow: hidden;
+			padding: 10px;
+		}
+nav a {
+	display: flexbox;
+	padding: 10px 25px;
+	border: 1 dashed rgba(255,255,255,0.1);
+	text-decoration: none;
+	border-radius: 0px;
+	background-color: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255,255,255,0.1);
+	backdrop-filter: blur(30px);
+	color: rgba(255,255,255,0.8);
+	font-size: 18px;
+	letter-spacing: 2px;
+	cursor: pointer;
+		}
+		nav a:hover {
+			background-color: rgba(255,255,255,0.2);
+			color: white;
+		}
+		section {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			padding: 20px;
+		}
+		article {
+            display: inline-table;
+			box-shadow: 0px 0px 10px #ccc;
+			margin: 10px;
+			padding: 20px;
+			flex-basis: 400px;
+		}
+		article h2 {
+			margin-top: 0;
+			font-size: 24px;
+		}
+		article p {
+			font-size: 16px;
+			line-height: 1.5;
+			margin-bottom: 0;
+		}
+		footer {
+			color: white;
+			padding: 10px;
+			text-align: center;
+            border: 1px dashed rgba(255,255,255,0.2);
+		}
+        button{
+            display: flex;
+	padding: 10px 20px;
+	border: 1 dashed rgba(255,255,255,0.1);
+	text-decoration: none;
+	border-radius: 0px;
+	background-color: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255,255,255,0.1);
+	backdrop-filter: blur(30px);
+	color: rgba(255,255,255,0.8);
+	font-size: 18px;
+	letter-spacing: 2px;
+	cursor: pointer;
+        }
+        button:hover{
+            background-color: rgba(255,255,255,0.2);
+        }
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Maths Study Group</h1>
+	</header>
+	<nav>
+		<a href="/html/HomePage.html">Home</a>
+		<a href="/html/discussion.html">Discussion Forum</a>
+		<a href="/html/Resources.html">Resources</a>
+		<a href="/html/AboutUs.html">About Us</a>
+	</nav>
+	<section>
+		<article>
+			<h2>Introductions</h2>
+			<p>Use this thread to introduce yourself to the group!</p>
+			<button id="intro">Join Discussion</button>
+		</article>
+		<article>
+			<h2>Calculus Questions</h2>
+			<p>Post any calculus questions you have here and get help from other group members.</p>
+			<button id="calculus">Join Discussion</button>
+		</article>
+		<article>
+			<h2>Algebra Problems</h2>
+			<p>Stuck on an algebra problem? Post it here for help!</p>
+			<button id="algebra">Join Discussion</button>
+		</article>
+		<article>
+			<h2>Geometry Discussion</h2>
+			<p>Have a question about geometry? Ask it here!</p>
+			<button id="geometry">Join Discussion</button>
+		</article>
+	</section>
+	<footer>
+		<p>&copy; HiveMind 2023</p>
+	</footer>
+	<script>
+		const joinBtn1 = document.getElementById('intro');
+  joinBtn1.addEventListener('click', function() {
+    window.location.href = 'https://discord.com/channels/1067171201631387799/1067171201631387802';
+  });
+  const joinBtn2 = document.getElementById('calculus');
+  joinBtn2.addEventListener('click', function() {
+    window.location.href = 'https://discord.com/channels/1067171201631387799/1067172383074549922';
+  });
+  const joinBtn3 = document.getElementById('algebra');
+  joinBtn3.addEventListener('click',function(){
+	window.location.href ='https://discord.com/channels/1067171201631387799/1067172383074549922';
+  });
+  const joinBtn4 = document.getElementById('geometry');
+  joinBtn4.addEventListener('click',function(){
+	window.location.href='https://discord.com/channels/1067171201631387799/1067172383074549922';
+  }
+  )
+	</script>
+</body>
+</html>
