@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const { connectMongoose, User, pdfSchema } = require("./database.js");
+const { connectMongoose, User } = require("./database.js");
 const passport = require("passport");
 const {
   initializingPassport,
@@ -28,10 +28,9 @@ connectMongoose();
 initializingPassport(passport);
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "../")));
-app.use(
-  expressSession({
+app.use(express.urlencoded({extended: true}));
+app.use(express.static(path.join(__dirname, '../')));
+app.use(expressSession({
     secret: "secret",
     resave: false,
     saveUninitialized: false,
@@ -66,25 +65,6 @@ app.post("/SignUp", upload.single('img'), async (req, res) => {
   });
 
   res.redirect("/Profile");
-});
-
-app.post("/html/pdf.ejs", upload.single('myPdf'), async (req, res) => {
-    try {
-        const pdf = fs.readFileSync(req.file.path);
-        const encode_pdf = pdf.toString('base64');
-        const final_pdf = {
-            contentType: req.file.mimetype,
-            pdf: new Buffer.from(encode_pdf, 'base64'),
-        };
-        const result = await pdfSchema.create(final_pdf);
-        console.log(result.pdf.buffer);
-        console.log("Saved PDF to database");
-        res.contentType(final_pdf.contentType);
-        res.send(final_pdf.pdf);
-    } catch (err) {
-        console.log(err);
-        res.status(500).send("Failed to save PDF to database");
-    }
 });
 
 app.post(
