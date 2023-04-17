@@ -5,7 +5,7 @@ head {
 	/* font-family: Arial,sans-serif; */
 }
 html{
-	font-family: Tahoma;
+	font-family: verdana;
 }
 
 body {
@@ -149,10 +149,10 @@ nav a:hover {
 }
 
 .feature {
-	display: inline-block;
+	display: inline-grid;
 	justify-content: space-between;
 	/* background-color: #fff; */
-	padding: 15px 15px;
+	padding: 15px 45px;
 	border: 0;
 	text-decoration: none;
 	border-radius: 1px;
@@ -189,6 +189,7 @@ nav a:hover {
 	width: 120px;
 	margin-bottom: 1em;
 	background-color: rgba(255,255,255,0);
+
 
 }
 
