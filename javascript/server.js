@@ -80,7 +80,7 @@ app.post("/html/PdfViewer.ejs", upload.single('myPdf'), async (req, res) => {
         console.log(result.pdf.buffer);
         console.log("Saved PDF to database");
 
-        res.redirect(`/pdf/${result._id}`);
+        res.render('calibration', {id : `${result.id}`});
         
     } catch (err) {
         console.log(err);
@@ -126,10 +126,6 @@ app.get("/Dashboard", isAuthenticated, (req, res) => {
   res.redirect("/html/Dashboard.hbs", req.user);
 });
 
-app.post("/html/pdf.html", (req, res) => {
-  res.redirect("/html/pdf.html");
-});
-
 app.get("/Settings", isAuthenticated, (req, res) => {
   res.render("Settings", req.user);
 });
@@ -137,6 +133,10 @@ app.get("/Settings", isAuthenticated, (req, res) => {
 app.post("/Settings", (req, res) => {
   update(req, res);
   res.redirect("/Profile");
+});
+
+app.get("/Upload", (req, res) => {
+  res.redirect("/html/UploadPage.html")
 });
 
 async function update(req, res) {
