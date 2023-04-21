@@ -68,7 +68,7 @@ app.post("/SignUp", upload.single('img'), async (req, res) => {
   res.redirect("/Profile");
 });
 
-app.post("/html/pdf.ejs", upload.single('myPdf'), async (req, res) => {
+app.post("/html/PdfViewer.ejs", upload.single('myPdf'), async (req, res) => {
     try {
         const pdf = fs.readFileSync(req.file.path);
         const encode_pdf = pdf.toString('base64');
@@ -79,14 +79,30 @@ app.post("/html/pdf.ejs", upload.single('myPdf'), async (req, res) => {
         const result = await pdfSchema.create(final_pdf);
         console.log(result.pdf.buffer);
         console.log("Saved PDF to database");
-        res.contentType(final_pdf.contentType);
-        res.send(final_pdf.pdf);
+
+        res.render('calibration', {id : `${result.id}`});
+        
     } catch (err) {
         console.log(err);
         res.status(500).send("Failed to save PDF to database");
     }
 });
 
+app.get('/pdf/:pdfId', async (req, res) => {
+  try {
+      const pdf = await pdfSchema.findById(req.params.pdfId);
+      res.render("PdfViewer", { pdf });
+  } catch (err) {
+      console.log(err);
+      res.status(500).send("Failed to display PDF from database");
+  }
+});
+
+app.get('/PdfViewer', (req, res) => {
+  res.render('PdfViewer', { pdfId: req.query.id });
+});
+
+ 
 app.post(
   "/Login",
   passport.authenticate("local", { failureRedirect: "/Login" }),
@@ -110,10 +126,6 @@ app.get("/Dashboard", isAuthenticated, (req, res) => {
   res.redirect("/html/Dashboard.hbs", req.user);
 });
 
-app.post("/html/pdf.html", (req, res) => {
-  res.redirect("/html/pdf.html");
-});
-
 app.get("/Settings", isAuthenticated, (req, res) => {
   res.render("Settings", req.user);
 });
@@ -121,6 +133,10 @@ app.get("/Settings", isAuthenticated, (req, res) => {
 app.post("/Settings", (req, res) => {
   update(req, res);
   res.redirect("/Profile");
+});
+
+app.get("/Upload", (req, res) => {
+  res.redirect("/html/UploadPage.html")
 });
 
 async function update(req, res) {
