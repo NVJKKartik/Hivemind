@@ -21,6 +21,7 @@ const userSchema = new mongoose.Schema({
 const pdfSchema = new mongoose.Schema({
     filename: String,
     path: String,
+    filedesc : String,
     uploadDate: Date,
     pdf: {
         type: Buffer,
