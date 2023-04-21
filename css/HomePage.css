@@ -84,6 +84,7 @@ nav a:hover {
 .hero{
 	display: flex;
 	flex-direction: column;
+	font-size: 23px;
 	align-items: center;
 	text-align: center;
 	padding: 5em 0;
@@ -148,6 +149,10 @@ nav a:hover {
 	color:black;
 }
 
+.features{
+	font-size: 10px;
+}
+
 .feature {
 	display: inline-grid;
 	justify-content: space-between;
@@ -167,7 +172,7 @@ nav a:hover {
 	height:350px;
 }
 
-.features h2 {
+.feature_title {
 	display: inline;
 	font-size: 2.5em;
 	text-align: center;
