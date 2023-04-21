@@ -98,7 +98,7 @@ app.get('/pdf/:pdfId', async (req, res) => {
   }
 });
 
-app.get('/PdfViewer', (req, res) => {
+app.get('/PdfViewer', async (req, res) => {
   res.render('PdfViewer', { pdfId: req.query.id });
 });
 
