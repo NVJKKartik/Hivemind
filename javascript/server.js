@@ -73,6 +73,8 @@ app.post("/html/PdfViewer.ejs", upload.single('myPdf'), async (req, res) => {
         const pdf = fs.readFileSync(req.file.path);
         const encode_pdf = pdf.toString('base64');
         const final_pdf = {
+            filename : req.body.title,
+            filedesc : req.body.description,
             contentType: req.file.mimetype,
             pdf: new Buffer.from(encode_pdf, 'base64'),
         };
@@ -98,7 +100,7 @@ app.get('/pdf/:pdfId', async (req, res) => {
   }
 });
 
-app.get('/PdfViewer', (req, res) => {
+app.get('/PdfViewer', async (req, res) => {
   res.render('PdfViewer', { pdfId: req.query.id });
 });
 
