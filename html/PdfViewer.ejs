@@ -5,6 +5,12 @@
 	<link rel="stylesheet" type="text/css" href="/css/Profile.css">
 </head>
 <body>
+  <div class="stopwatch-container">
+    <div id="timer" class="timer">00:00:00.000</div>
+    <button id="start-button" class="timer-button" onclick="startTimer()">Start</button>
+    <button id="stop-button" class="timer-button" onclick="stopTimer()">Stop</button>
+    <button id="reset-button" class="timer-button" onclick="resetTimer()">Reset</button>
+  </div>
 
 	<header>
 		<a href="/"><h1>HiveMind</h1></a>
@@ -16,7 +22,7 @@
       }
       var xprediction = data.x; //these x coordinates are relative to the viewport
       var yprediction = data.y; //these y coordinates are relative to the viewport
-      console.log(elapsedTime); //elapsed time is based on time since begin was called
+ //elapsed time is based on time since begin was called
     }).begin();
     </script>
 		<nav>
@@ -39,7 +45,7 @@
 
 	<main>
 		<div class="Pdf-data">
-      <embed src="data:application/pdf;base64, <%= pdf.pdf.toString('base64') %>" width="100%" height="800px" type="application/pdf" />
+      <embed src="data:application/pdf;base64, <%= pdf.pdf.toString('base64') %>" width="75%" height="650px" type="application/pdf" class="pdf" />
 		</div>
 	</main>
   <script>
@@ -67,6 +73,58 @@ if (prediction) {
       function myFunction(x) {
         x.classList.toggle("change");
       }
+    </script>
+    <script>
+      // Get the timer element from the HTML
+var timerElement = document.getElementById("timer");
+
+// Initialize the timer variables
+var hours = 0;
+var minutes = 0;
+var seconds = 0;
+var milliseconds = 0;
+var interval;
+
+// Function to start the timer
+function startTimer() {
+  clearInterval(interval);
+  interval = setInterval(function() {
+    milliseconds += 100;
+    if (milliseconds == 100) {
+      milliseconds = 0;
+      seconds++;
+    }
+    if (seconds == 60) {
+      seconds = 0;
+      minutes++;
+    }
+    if (minutes == 60) {
+      minutes = 0;
+      hours++;
+    }
+    timerElement.innerHTML = (hours ? (hours > 9 ? hours : "0" + hours) : "00")
+      + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00")
+      + ":" + (seconds ? (seconds > 9 ? seconds : "0" + seconds) : "00")
+      + "." + (milliseconds > 9 ? milliseconds : "0" + milliseconds);
+  }, 10);
+}
+
+// Function to stop the timer
+function stopTimer() {
+  clearInterval(interval);
+}
+
+// Function to reset the timer
+function resetTimer() {
+  clearInterval(interval);
+  hours = minutes = seconds = milliseconds = 0;
+  timerElement.innerHTML = "00:00:00.000";
+}
+// Call the startTimer function when the page finishes loading
+window.addEventListener("load", function() {
+  startTimer();
+});
+
     </script>
 
 </body>

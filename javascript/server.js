@@ -123,7 +123,7 @@ app.get("/Logout", (req, res, done) => {
 });
 
 app.get("/Dashboard", isAuthenticated, (req, res) => {
-  res.redirect("/html/Dashboard.hbs", req.user);
+  res.render("/html/Dashboard.ejs", req.user);
 });
 
 app.get("/Settings", isAuthenticated, (req, res) => {
