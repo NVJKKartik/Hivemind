@@ -11,6 +11,7 @@ html{
 body {
 	/* background-color: #000000; */
 	background-image: url("/images/dash_back.jpg");
+	background-size: cover;
 	color: #ffffff;
 	font-family: Arial;
 	scroll-behavior: smooth;
@@ -43,6 +44,8 @@ header h1:hover {
 nav ul {
 	list-style: none;
 	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 nav li {
@@ -84,7 +87,7 @@ nav a:hover {
 .hero{
 	display: flex;
 	flex-direction: column;
-	font-size: 23px;
+	font-size: 20px;
 	align-items: center;
 	text-align: center;
 	padding: 5em 0;
@@ -157,7 +160,7 @@ nav a:hover {
 	display: inline-grid;
 	justify-content: space-between;
 	/* background-color: #fff; */
-	padding: 15px 45px;
+	padding: 15px 15px;
 	border: 0;
 	text-decoration: none;
 	border-radius: 1px;
@@ -321,4 +324,26 @@ footer {
 
 footer:hover{
 	color:lightyellow;
+}
+
+@media( max-width: 768px) {
+	header img{
+		width:50px;
+		height:50px;
+	}
+	nav a {
+		display: block;
+		padding: 15px 3px;
+		border: 0;
+		text-decoration: none;
+		border-radius: 1px;
+		background-color: rgba(255,255,255,0.1);
+		border: 1px solid rgba(255,255,255,0.1);
+		backdrop-filter: blur(30px);
+		color: rgba(255,255,255,0.8);
+		font-size: 8.5px;
+		letter-spacing: 1px;
+		cursor: pointer;
+		text-transform: uppercase;
+	  }
 }
