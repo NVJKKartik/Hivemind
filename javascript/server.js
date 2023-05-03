@@ -124,8 +124,8 @@ app.get("/Logout", (req, res, done) => {
   });
 });
 
-app.get("/Dashboard", isAuthenticated, (req, res) => {
-  res.redirect("/html/Dashboard.hbs", req.user);
+app.get("/Dashboard", (req, res) => {
+  res.render(path.join(__dirname, "../html/Dashboard.hbs"));
 });
 
 app.get("/Settings", isAuthenticated, (req, res) => {
