@@ -23,9 +23,7 @@ const pdfSchema = new mongoose.Schema({
     path: String,
     filedesc : String,
     uploadDate: Date,
-    pdf: {
-        type: Buffer,
-    }
+    pdfUrl : String
   });
 
 exports.User = mongoose.model("User", userSchema);

@@ -11,6 +11,7 @@ const expressSession = require("express-session");
 const hbs = require("hbs");
 const ejs = require("ejs");
 const fs = require("fs");
+const axios = require('axios'); 
 const {Storage} = require('@google-cloud/storage');
 const admin = require('firebase-admin');
 var multer = require('multer');
@@ -82,32 +83,67 @@ app.post("/SignUp", upload.single('img'), async (req, res) => {
 app.post("/html/PdfViewer.ejs", upload.single('myPdf'), async (req, res) => {
     try {
         const pdf = fs.readFileSync(req.file.path);
-        const encode_pdf = pdf.toString('base64');
+
+        //Upload to Firebase Storage
+        const bucketName = bucket.name;
+        const folderName = "pdfs";
+        const fileName = req.file.originalname;
+        const fileUpload = bucket.file(`${folderName}/${fileName}`);
+        const blobStream = fileUpload.createWriteStream({
+          metadata: {
+            contentType: req.file.mimetype,
+      },
+    });
+
+    blobStream.on("error", (error) => {
+      console.log(error);
+      res.status(500).send("Failed to upload file to Firebase Storage");
+    });
+    blobStream.on("finish", async () => {
+      const fileUrl = `https://firebasestorage.googleapis.com/v0/b/${bucketName}/o/${encodeURIComponent(fileUpload.name)}?alt=media`;
         const final_pdf = {
             filename : req.body.title,
             filedesc : req.body.description,
-            contentType: req.file.mimetype,
-            pdf: new Buffer.from(encode_pdf, 'base64'),
+            uploadDate : Date.now(),
+            pdfUrl : fileUrl
         };
         const result = await pdfSchema.create(final_pdf);
-        console.log(result.pdf.buffer);
-        console.log("Saved PDF to database");
+        console.log(`Saved PDF to database with ID ${result._id}`);
 
         res.render('calibration', {id : `${result.id}`});
-        
+      });
+        blobStream.end(pdf);
     } catch (err) {
         console.log(err);
         res.status(500).send("Failed to save PDF to database");
     }
 });
 
-app.get('/pdf/:pdfId', async (req, res) => {
+app.get("/pdf/:id", async (req, res) => {
+  const pdfId = req.params.id;
+
   try {
-      const pdf = await pdfSchema.findById(req.params.pdfId);
-      res.render("PdfViewer", { pdf });
-  } catch (err) {
-      console.log(err);
-      res.status(500).send("Failed to display PDF from database");
+    // Find the document with the specified ID in the MongoDB collection
+    const pdf = await pdfSchema.findById(pdfId);
+
+    if (!pdf) {
+      // Return a 404 error if the document is not found
+      return res.status(404).send("PDF not found");
+    }
+
+    console.log(`pdfId: ${pdfId}`);
+    console.log(`pdfUrl: ${pdf.pdfUrl}`);
+    const Url = pdf.pdfUrl;
+    res.render('PdfViewer.ejs', {Url});
+
+  } catch (error) {
+    console.error(error);
+
+    if (error.code === 404) {
+      return res.status(404).send("PDF not found");
+    }
+
+    res.status(500).send("Internal server error");
   }
 });
 
