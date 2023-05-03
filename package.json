@@ -20,6 +20,8 @@
     "express-fileupload": "^1.4.0",
     "express-handlebars": "^7.0.4",
     "express-session": "^1.17.3",
+    "firebase": "^9.21.0",
+    "firebase-admin": "^11.7.0",
     "fs": "^0.0.1-security",
     "google-auth-library": "^8.7.0",
     "googleapis": "^114.0.0",

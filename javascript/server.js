@@ -11,8 +11,9 @@ const expressSession = require("express-session");
 const hbs = require("hbs");
 const ejs = require("ejs");
 const fs = require("fs");
+const {Storage} = require('@google-cloud/storage');
+const admin = require('firebase-admin');
 var multer = require('multer');
-var upload = multer({dest:'uploads/'});
 var storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, './uploads');
@@ -22,6 +23,16 @@ var storage = multer.diskStorage({
     }
 });
 var upload = multer({ storage: storage })
+
+// Initialize Firebase Admin SDK
+const serviceAccount = require('./hivemind-382804-firebase-adminsdk-pdnb4-f3dcffdd7a.json');
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  storageBucket: 'gs://hivemind-382804.appspot.com/',
+});
+const bucket = admin.storage().bucket();
+
+
 
 connectMongoose();
 
@@ -124,8 +135,8 @@ app.get("/Logout", (req, res, done) => {
   });
 });
 
-app.get("/Dashboard", (req, res) => {
-  res.render(path.join(__dirname, "../html/Dashboard.hbs"));
+app.get("/Dashboard", isAuthenticated,  (req, res) => {
+  res.render(path.join(__dirname, "../html/Dashboard.ejs"), req.user);
 });
 
 app.get("/Settings", isAuthenticated, (req, res) => {
