@@ -115,8 +115,6 @@ nav a:hover {
 .hero a:hover{
 	background-color: rgba(255,255,255,0.2);
 	color:white;
-	width:125px;
-	height: 12.5px;
 }
 
 
@@ -134,9 +132,9 @@ nav a:hover {
 	color:lightgrey;
 }
 
-.btn {
+/* .btn {
 	display: inline-block;
-	padding: 1em 2em;
+	padding: 10px 30px;
 	background-color: #333;
 	color: #fff;
 	border: none;
@@ -147,10 +145,10 @@ nav a:hover {
 }
 .btn:hover{
 	background-color: #f0ecec;
+	padding:10px 30px;
 	cursor: pointer;
-	padding:1.8%;
 	color:black;
-}
+} */
 
 .features{
 	font-size: 10px;

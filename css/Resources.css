@@ -71,9 +71,9 @@ main h2{
 	border: 0;
 	text-decoration: none;
 	border-radius: 1px;
-	background-color: rgba(255,255,255,0.1);
+	/* background-color: rgba(255,255,255,0.1);
 	border: 1px solid rgba(255,255,255,0.1);
-	backdrop-filter: blur(30px);
+	backdrop-filter: blur(30px); */
 	color: rgba(255,255,255,0.8);
 	font-size: 18px;
 	letter-spacing: 2px;
@@ -93,8 +93,8 @@ h2 {
 	border: 0;
 	text-decoration: none;
 	border-radius: 1px;
-	background-color: rgba(255,255,255,0.1);
-	border: 1px solid rgba(255,255,255,0.1);
+	/* background-color: rgba(255,255,255,0.1); */
+	/* border: 1px solid rgba(255,255,255,0.1); */
 	backdrop-filter: blur(30px);
 	color: rgba(255,255,255,0.8);
 	font-size: 16px;
@@ -116,7 +116,8 @@ h2 {
 }
 
 .resource-list p {
-	margin: 0;
+	margin-top:-50px;
+	margin-right: -100px;
 }
 footer{
 	color:white;
