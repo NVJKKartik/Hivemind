@@ -92,6 +92,7 @@ nav a:hover {
 	margin-top: 50px;
 	flex-direction: column;
 	font-size: 20px;
+	border-radius: 20px;
 	align-items: center;
 	text-align: center;
 	padding: 5em 0;
