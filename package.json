@@ -4,11 +4,17 @@
   "description": "",
   "main": "javascript/server.js",
   "scripts": {
-    "start": "nodemon javascript/server.js"
+    "start": "nodemon --ext js,ejs,html,css javascript/server.js",
+    "sass": "node-sass scss -o css"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.29.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-sass": "^5.1.0",
+    "node-sass": "^8.0.0",
     "nodemon": "^2.0.22"
   },
   "dependencies": {
@@ -36,6 +42,7 @@
     "pdf-to-base64": "^1.0.3",
     "react": "^18.2.0",
     "react-router-dom": "^6.10.0",
+    "sass": "^1.62.1",
     "sweetalert": "^2.1.2",
     "webgazer": "^3.1.2"
   }
