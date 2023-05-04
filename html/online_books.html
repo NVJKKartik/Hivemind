@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>Free Books</title>
+</head>
+<style>
+    body{
+        color:white;
+    }
+    input{
+        width:50%;
+        height: 5%;
+        border-radius: 20px;
+        font-size: 25px;
+    }
+    body button{
+    text-align: center;
+    align-items: center;
+    display: inline-block;
+	padding: 24px 32px;
+	border: 0;
+	text-decoration: none;
+	border-radius: 1px;
+	background-color: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255,255,255,0.1);
+	backdrop-filter: blur(30px);
+	color: rgba(255,255,255,0.8);
+	font-size: 14px;
+	letter-spacing: 2px;
+	cursor: pointer;
+	font-family: Tahoma;
+	text-transform: uppercase;
+	align-items:center;
+    }
+</style>
+
+<body style="background-image:url('/images/dash_back.jpg')">
+    <h1>Search any book you want to read!</h1>
+    <input id="input"><br>
+    <button onclick="getbooks()">Get Books!</button><br>
+    <div id="output"></div>
+
+<script>
+    function getbooks(){
+        document.getElementById('output').innerHTML="";
+        fetch("http://openlibrary.org/search.json?q="+document.getElementById("input").value)
+        .then(a=>a.json())
+        .then(response=>{
+            for(var i=0;i<10;i++){
+                document.getElementById("output").innerHTML+="<h2>"+response.docs[i].title+"</h2>"+response.docs[i].author_name[0]+
+                    '<br><img src="https://covers.openlibrary.org/b/isbn/" +response.docs[i].isbn[0]+"-M.jpeg';
+            }
+        });
+    }
+</script>
+</body>
+</html>

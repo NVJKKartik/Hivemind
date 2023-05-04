@@ -33,7 +33,7 @@ body {
 	padding: 12px 32px;
 	border: 1 dashed rgba(255,255,255,0.1);
 	text-decoration: none;
-	border-radius: 0px;
+	border-radius: 20px;
 	background-color: rgba(255,255,255,0.1);
 	border: 1px solid rgba(255,255,255,0.1);
 	backdrop-filter: blur(30px);
