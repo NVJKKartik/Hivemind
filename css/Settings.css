@@ -6,15 +6,9 @@ body {
     color:white;
   }
 
-.img{
-    width:100px;
-    height:100px;
-    margin-left: 200px;
-  }
-
 .profile-pic-div{
   margin-left: -600px;
-  margin-top: -220px;
+  margin-top: -200px;
   height: 200px;
   width: 200px;
   position: absolute;
@@ -58,7 +52,7 @@ body {
     padding: 1em;
   }
   nav{
-    margin-left: 900px;
+    margin-left: 800px;
   }
   
   nav ul {
@@ -71,6 +65,7 @@ body {
     display: inline-block;
     margin-right: 1em;
   }
+
   
   nav a {
   display: inline-block;
@@ -101,7 +96,7 @@ body {
     margin-top: 0;
   }
   form{
-    margin-top: 200px;
+    margin-top: 250px;
   }
   
   form label {
