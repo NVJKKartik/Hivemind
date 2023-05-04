@@ -31,6 +31,10 @@ const pdfSchema = new mongoose.Schema({
   });
 
 const HourSchema = new mongoose.Schema({
+    username: {
+        type: String,
+        required: true,
+    },
     Subject : String,
     hoursConsumed: {
         type: mongoose.Schema.Types.Decimal128,
