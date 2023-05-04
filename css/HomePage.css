@@ -13,8 +13,7 @@ html{
 }
 
 body {
-	/* background-color: #000000; */
-	background-image: url("/images/dash_back.jpg");
+  background-image: url("/images/dash_back.jpg");
 	background-size: cover;
 	color: #ffffff;
 	font-family: Arial;
@@ -189,7 +188,6 @@ footer:hover{
   body {
     color: #fff;
     font-size: 30px;
-    background: #000;
   }
   li {
     list-style: none;
@@ -259,7 +257,6 @@ footer:hover{
     border-bottom: 1px solid #e60012;
   }
   .c-label {
-
     display: inline-block;
     color: #eee;
     background-color: rgba(139,0,10,0.9);
