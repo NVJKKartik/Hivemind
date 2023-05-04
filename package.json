@@ -12,6 +12,7 @@
     "nodemon": "^2.0.22"
   },
   "dependencies": {
+    "axios": "^1.4.0",
     "bcrypt": "^5.1.0",
     "bootstrap": "^5.2.3",
     "compression": "^1.7.4",
@@ -20,6 +21,8 @@
     "express-fileupload": "^1.4.0",
     "express-handlebars": "^7.0.4",
     "express-session": "^1.17.3",
+    "firebase": "^9.21.0",
+    "firebase-admin": "^11.7.0",
     "fs": "^0.0.1-security",
     "google-auth-library": "^8.7.0",
     "googleapis": "^114.0.0",
@@ -30,6 +33,7 @@
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "pdf-lib": "^1.17.1",
+    "pdf-to-base64": "^1.0.3",
     "react": "^18.2.0",
     "react-router-dom": "^6.10.0",
     "sweetalert": "^2.1.2",
