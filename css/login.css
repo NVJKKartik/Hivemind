@@ -1,9 +1,9 @@
 /* Global Styles */
 
 body {
-	font-family: Arial, sans-serif;
+	font-family: tahoma, sans-serif;
 	color:white;
-	font-size: 16px;
+	font-size: 20px;
 	margin: 0;
 	padding: 0;
 	background-image: url("/images/dash_back.jpg");
@@ -13,24 +13,6 @@ body {
 	color: #fff;
 	text-decoration: none;
 }
-nav a{
-	display: inline-block;
-	padding: 9px 25px;
-	border: 0;
-	text-decoration: none;
-	border-radius: 1px;
-	background-color: rgba(255,255,255,0.1);
-	border: 1px solid rgba(255,255,255,0.1);
-	backdrop-filter: blur(30px);
-	color: rgba(255,255,255,0.8);
-	font-size: 14px;
-	letter-spacing: 2px;
-	cursor: pointer;
-	text-transform: uppercase;
-}
-nav a:hover{
-	background-color: rgba(255,255,255,0.2);
-}
 
 header {
 	/* background-color: #222; */
@@ -38,9 +20,18 @@ header {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 	padding: 20px;
+	
 }
+
+header img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 
 nav ul {
 	display: flex;
@@ -76,6 +67,8 @@ form label {
 form input[type="text"], form input[type="email"], form input[type="password"] {
 	display: block;
 	padding: 10px;
+	font-family: tahoma;
+	font-size: medium;
 	margin-bottom: 20px;
 	border: none;
 	border-radius: 5px;
@@ -154,4 +147,5 @@ footer{
 	bottom:10%;
 	text-align: center;
 	border: 1px dashed rgba(255,255,255,0.2);
+	font-size: 15px;
 }

@@ -13,24 +13,6 @@ body {
 	color: #fff;
 	text-decoration: none;
 }
-nav a{
-	display: inline-block;
-	padding: 9px 25px;
-	border: 0;
-	text-decoration: none;
-	border-radius: 1px;
-	background-color: rgba(255,255,255,0.1);
-	border: 1px solid rgba(255,255,255,0.1);
-	backdrop-filter: blur(30px);
-	color: rgba(255,255,255,0.8);
-	font-size: 14px;
-	letter-spacing: 2px;
-	cursor: pointer;
-	text-transform: uppercase;
-}
-nav a:hover{
-	background-color: rgba(255,255,255,0.2);
-}
 
 header {
 	/* background-color: #222; */
@@ -40,6 +22,15 @@ header {
 	align-items: center;
 	justify-content: space-between;
 	padding: 20px;
+}
+
+header img{
+	margin-left: 100px;
+	margin-bottom: -350px;
+	margin-top: 100px;
+	left:0;
+	display: block;
+  	width: 15%;
 }
 
 nav ul {
@@ -67,6 +58,7 @@ main {
 h2 {
 	margin-top: 0;
 }
+
 
 form label {
 	display: block;
@@ -147,6 +139,21 @@ main .login{
 	cursor: pointer;
 
 }
+.choose{
+	display: flex;
+	padding: 25px 30px;
+	border: 0;
+	text-decoration: none;
+	border-radius: 1px;
+	background-color: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255,255,255,0.1);
+	backdrop-filter: blur(30px);
+	color: rgba(255,255,255,0.8);
+	font-size: 14px;
+	letter-spacing: 2px;
+	cursor: pointer;
+	text-transform: uppercase;
+}
 
 
 footer{
@@ -154,4 +161,5 @@ footer{
 	bottom:10%;
 	text-align: center;
 	border: 1px dashed rgba(255,255,255,0.2);
+	font-size: 15px;
 }

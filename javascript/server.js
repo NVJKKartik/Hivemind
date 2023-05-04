@@ -55,15 +55,15 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "../html"));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../html/HomePage.html"));
+  res.render("HomePage", {req : req});
 });
 
 app.get("/SignUp", (req, res) => {
-  res.sendFile(path.join(__dirname, "../html/SignUp.html"));
+  res.render("SignUp");
 });
 
 app.get("/Login", (req, res) => {
-  res.sendFile(path.join(__dirname, "../html/login.html"));
+  res.render("Login");
 });
 
 app.post("/SignUp", upload.single('img'), async (req, res) => {
@@ -77,7 +77,7 @@ app.post("/SignUp", upload.single('img'), async (req, res) => {
     password: req.body.password
   });
 
-  res.redirect("/Profile");
+  res.redirect("/");
 });
 
 app.post("/html/PdfViewer.ejs", upload.single('myPdf'), async (req, res) => {
@@ -156,7 +156,7 @@ app.post(
   "/Login",
   passport.authenticate("local", { failureRedirect: "/Login" }),
   (req, res) => {
-    res.redirect("/Profile");
+    res.redirect("/");
   }
 );
 
@@ -172,7 +172,11 @@ app.get("/Logout", (req, res, done) => {
 });
 
 app.get("/Dashboard", isAuthenticated,  (req, res) => {
-  res.render(path.join(__dirname, "../html/Dashboard.ejs"), req.user);
+  res.render("Dashboard", {req : req});
+});
+
+app.get("/AboutUs", (req, res) => {
+  res.render("AboutUs");
 });
 
 app.get("/Settings", isAuthenticated, (req, res) => {

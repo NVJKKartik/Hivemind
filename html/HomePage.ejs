@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HiveMind - Study Environment</title>
+	<link rel="stylesheet" href="/css/HomePage.css">
+	<link rel="icon" href="/images/logo.jpg" type="image/x-icon">
+</head>
+<body>
+	<header>
+		<a href="/"><img src="/images/logo.jpg"></a>
+		<!-- <h1>HiveMind</h1> -->
+		<nav>
+			<ul>
+				<% if (req.user) { %>
+					<li><p>Welcome, <%= req.user.name %>!</p></li>
+				<% } else { %> 
+					<li><p>Welcome to HiveMind%>!</p></li>
+				<% } %>
+				<li><a href="/Dashboard">Dashboard</a></li>
+				<li><a href="/Resources">Resources</a></li>
+                <li><a href="/ContactUs">Contact Us</a></li>
+				<li><a href="/AboutUs">About Us</a></li>
+				<% if (req.user) { %>
+					<li><a href="/Logout">Logout</a></li>
+				<% } else { %> 
+					<li><a href="/Login">Login</a></li>
+				<% } %>
+			</ul>
+		</nav>
+	</header>
+		<section class="hero">
+			<h2>Study Smarter With HiveMind</h2>
+			<p>Collaborate with students around the world to learn faster and more efficiently.</p>
+			<a href="/SignUp" class="btn">Create a New Account</a>
+		</section>
+		<main>
+		<h1>Our Features</h1>
+<input type="radio" id="s-1" name="slider-control" checked="checked">
+<input type="radio" id="s-2" name="slider-control">
+<input type="radio" id="s-3" name="slider-control">
+<input type="radio" id="s-4" name="slider-control">
+<input type="radio" id="s-5" name="slider-control">
+<input type="radio" id="s-6" name="slider-control">
+<div class="js-slider">
+  <figure class="js-slider_item img-1">
+    <div class="js-slider_img">
+      <img class="c-img-w-full" src="/images/col.png" alt="">
+    </div>
+    <figcaption class="wo-caption">
+      <h3 class="wo-h3">
+        <div class="c-label">Collaboration</div>
+        <br class="view-sm mb-s"></h3>
+      <ul class="wo-credit">
+        <li></li>
+        <li>Connect with other students studying the same topics and share knowledge.</li>
+        <li>
+          <span class="c-txt-s"></span></li>
+      </ul>
+    </figcaption>
+  </figure>
+  <figure class="js-slider_item img-2">
+    <div class="js-slider_img">
+      <img class="c-img-h-full" src="/images/Dashboardnew.png" alt=""></div>
+    <figcaption class="wo-caption">
+		<h3 class="wo-h3">
+			<div class="c-label">Dashboard</div>
+			<br class="view-sm mb-s"></h3>
+		  <ul class="wo-credit">
+        <li></li>
+        <li>Track your study time and progress, and take quizzes to assess your knowledge.</li>
+        <li></li></ul>
+    </figcaption>
+  </figure>
+  <figure class="js-slider_item img-3">
+    <div class="js-slider_img">
+      <img class="c-img-h-full" src="/images/concentrationnew.png" alt=""></div>
+    <figcaption class="wo-caption">
+		<h3 class="wo-h3">
+			<div class="c-label">Concentration</div>
+			<br class="view-sm mb-s"></h3>
+		  <ul class="wo-credit">
+        <li></li>
+        <li>Give your 100% concentration while studying else we will alert you with an alarm if you move out of the screen.</li>
+        <li></li></ul>
+    </figcaption>
+  </figure>
+  <figure class="js-slider_item img-4">
+    <div class="js-slider_img">
+      <img class="c-img-h-full" src="/images/resource.png" alt=""></div>
+    <figcaption class="wo-caption">
+		<h3 class="wo-h3">
+			<div class="c-label">Resources</div>
+			<br class="view-sm mb-s"></h3>
+		  <ul class="wo-credit">
+        <li></li>
+        <li>Access a wide range of study materials, including notes, articles, and videos.</li>
+        <li></li></ul>
+    </figcaption>
+  </figure>
+  <figure class="js-slider_item img-5">
+    <div class="js-slider_img">
+      <img class="c-img-h-full" src="/images/quiznew.png" alt=""></div>
+    <figcaption class="wo-caption">
+		<h3 class="wo-h3">
+			<div class="c-label">Quizzes</div>
+			<br class="view-sm mb-s"></h3>
+		  <ul class="wo-credit">
+        <li></li>
+        <li>Interactive quizzes that allow users to test their knowledge and receive instant feedback on their performance.</li>
+        <li></li></ul>
+    </figcaption>
+  </figure>
+  <figure class="js-slider_item img-6">
+    <div class="js-slider_img">
+      <img class="c-img-h-full" src="/images/motivationnew.png" alt=""></div>
+    <figcaption class="wo-caption">
+		<h3 class="wo-h3">
+			<div class="c-label">Motivation</div>
+			<br class="view-sm mb-s"></h3>
+		  <ul class="wo-credit">
+        <li></li>
+        <li>Personalized motivation tools that help users stay motivated and engaged, such as daily affirmations, inspirational quotes, and reminders.</li>
+        <li></li></ul>
+    </figcaption>
+  </figure>
+
+
+
+  <div class="js-slider_nav">
+    <label class="js-slider_nav_item s-nav-1 prev" for="s-6"></label>
+    <label class="js-slider_nav_item s-nav-1 next" for="s-2"></label>
+    <label class="js-slider_nav_item s-nav-2 prev" for="s-1"></label>
+    <label class="js-slider_nav_item s-nav-2 next" for="s-3"></label>
+    <label class="js-slider_nav_item s-nav-3 prev" for="s-2"></label>
+    <label class="js-slider_nav_item s-nav-3 next" for="s-4"></label>
+	<label class="js-slider_nav_item s-nav-4 prev" for="s-3"></label>
+    <label class="js-slider_nav_item s-nav-4 next" for="s-5"></label>
+	<label class="js-slider_nav_item s-nav-5 prev" for="s-4"></label>
+    <label class="js-slider_nav_item s-nav-5 next" for="s-6"></label>
+	<label class="js-slider_nav_item s-nav-6 prev" for="s-5"></label>
+    <label class="js-slider_nav_item s-nav-6 next" for="s-1"></label>
+  </div>
+  <div class="js-slider_indicator">
+    <div class="js-slider-indi indi-1"></div>
+    <div class="js-slider-indi indi-2"></div>
+    <div class="js-slider-indi indi-3"></div>
+	<div class="js-slider-indi indi-4"></div>
+	<div class="js-slider-indi indi-5"></div>
+	<div class="js-slider-indi indi-6"></div>
+  </div>
+</div>
+		  
+
+
+		<!-- <section class="slideshow">
+			<div class="slide">
+				<img src="/images/col.png" alt="Collaboration">
+				<h4>Collaboration</h4>
+				<p>Connect with other students studying the same <br>topics and share knowledge.</p>
+			</div>
+			<div class="slide">
+				<img src="/images/Dashboardnew.png" alt="Dashboard">
+				<h4>Dashboard</h4>
+				<p>Track your study time and progress, and take <br>quizzes to assess your knowledge.</p>
+			</div>
+			<div class="slide">
+				<img src="/images/resource.png" alt="Resources">
+				<h4>Resources</h4>
+				<p>Access a wide range of study materials, including<br> notes, articles, and videos.</p>
+			</div>	
+            <div class="slide">
+				<img src="/images/concentrationnew.png" alt="Concentration">
+				<h4>Concentration</h4>
+				<p> Give your 100% concentration while studying else we will alert <br>you with an alarm if you move out of the screen.</p>
+			</div>
+			<div class="slide">
+				<img src="/images/quiznew.png" alt="Quizzes">
+				<h4>Quizzes</h4>
+				<p> Interactive quizzes that allow users to test their knowledge and<br> receive instant feedback on their performance.</p>
+			</div>
+			<div class="slide">
+				<img src="/images/motivationnew.png" alt="Motivation">
+				<h4>Motivation</h4>
+				<p>Personalized motivation tools that help users stay motivated and engaged, such as daily affirmations, inspirational quotes, and reminders.</p>
+			</div>
+		</section> -->
+
+	</main>
+	
+	<footer>
+		<p>&copy; 2023 HiveMind. All rights reserved.</p>
+	</footer>
+
+	<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+setInterval(plusSlides(1),2000);
+	</script>
+</body>
+</html>

@@ -19,6 +19,10 @@ const userSchema = new mongoose.Schema({
 });
 
 const pdfSchema = new mongoose.Schema({
+    username: {
+        type: String,
+        required: true,
+    },
     filename: String,
     path: String,
     filedesc : String,
