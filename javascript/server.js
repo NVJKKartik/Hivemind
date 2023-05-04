@@ -81,17 +81,17 @@ app.post("/SignUp", upload.single('img'), async (req, res) => {
 });
 
 app.post("/html/PdfViewer.ejs", upload.single('myPdf'), async (req, res) => {
-  try {
-    const pdf = fs.readFileSync(req.file.path);
+    try {
+        const pdf = fs.readFileSync(req.file.path);
 
-    //Upload to Firebase Storage
-    const bucketName = bucket.name;
-    const folderName = "pdfs";
-    const fileName = req.file.originalname;
-    const fileUpload = bucket.file(`${folderName}/${fileName}`);
-    const blobStream = fileUpload.createWriteStream({
-      metadata: {
-        contentType: req.file.mimetype,
+        //Upload to Firebase Storage
+        const bucketName = bucket.name;
+        const folderName = "pdfs";
+        const fileName = req.file.originalname;
+        const fileUpload = bucket.file(`${folderName}/${fileName}`);
+        const blobStream = fileUpload.createWriteStream({
+          metadata: {
+            contentType: req.file.mimetype,
       },
     });
 
@@ -101,12 +101,12 @@ app.post("/html/PdfViewer.ejs", upload.single('myPdf'), async (req, res) => {
     });
     blobStream.on("finish", async () => {
       const fileUrl = `https://firebasestorage.googleapis.com/v0/b/${bucketName}/o/${encodeURIComponent(fileUpload.name)}?alt=media`;
-      const final_pdf = {
-        filename : req.body.title,
-        filedesc : req.body.description,
-        uploadDate : Date.now(),
-        pdfUrl : fileUrl,
-        username : req.user.username
+        const final_pdf = {
+            filename : req.body.title,
+            filedesc : req.body.description,
+            uploadDate : Date.now(),
+            pdfUrl : fileUrl,
+             username : req.user.username
       };
 
       // Validate the username field before creating a new PDF object
@@ -115,17 +115,17 @@ app.post("/html/PdfViewer.ejs", upload.single('myPdf'), async (req, res) => {
         return;
       }
 
-      const result = await pdfSchema.create(final_pdf);
-      console.log(`Saved PDF to database with ID ${result._id}`);
+        const result = await pdfSchema.create(final_pdf);
+        console.log(`Saved PDF to database with ID ${result._id}`);
 
-      res.render('calibration', {id : `${result.id}`});
-    });
+        res.render('calibration', {id : `${result.id}`});
+      });
 
-    blobStream.end(pdf);
-  } catch (err) {
-    console.log(err);
-    res.status(500).send("Failed to save PDF to database");
-  }
+       blobStream.end(pdf);
+    } catch (err) {
+        console.log(err);
+        res.status(500).send("Failed to save PDF to database");
+    }
 });
 
 
@@ -161,6 +161,9 @@ app.get('/PdfViewer', async (req, res) => {
   res.render('PdfViewer', { pdfId: req.query.id });
 });
 
+app.get('/Discussions', async (req, res) => {
+  res.redirect('../html/discussion.html');
+})
  
 app.post(
   "/Login",

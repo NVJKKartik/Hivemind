@@ -23,36 +23,27 @@
     
     <main>
       <h1>Discussion Forum</h1>
-      <form id="new-topic-form">
-        <label for="topic-title">Topic Title:</label>
-        <input type="text" id="topic-title" placeholder="Your Topic Title" name="title" required>
-        <label for="topic-body">Topic Description:</label>
-        <textarea id="topic-body" name="body" placeholder="Topic description in not more than 50 words" required></textarea>
-        <button type="submit">Create Topic</button>
+      <form id="new-message-form">
+        <label for="message-body">Message:</label>
+        <textarea id="message-body" name="body" placeholder="Type your message here" required></textarea>
+        <button type="submit">Send</button>
       </form>
       
       <div class="containers">
-        <h2>Discussion Forum</h2>
-        <p>Please select a topic to discuss:</p>
-    
-        <div class="topics">
-          <h3>Algebra</h3>
-          <a href="#"><p>Discuss algebraic expressions and equations.</p></a>
-        </div>
-    
-        <div class="topics">
-          <h3>Geometry</h3>
-          <a href="#"><p>Discuss geometric shapes and measurements.</p></a>
-        </div>
-    
-        <div class="topics">
-          <h3>Calculus</h3>
-          <a href="#"><p>Discuss limits, derivatives, and integrals.</p></a>
-        </div>
-    
-        <div class="topics">
-          <h3>Statistics</h3>
-          <a href="#"><p>Discuss probability and statistical analysis.</p></a>
+        <h2>Messages</h2>
+        <div id="messages-container">
+          <div class="message">
+            <p class="message-sender">John:</p>
+            <p class="message-body">Hi everyone, how's it going?</p>
+          </div>
+          <div class="message">
+            <p class="message-sender">Mary:</p>
+            <p class="message-body">Hey John, I'm doing good, thanks. How about you?</p>
+          </div>
+          <div class="message">
+            <p class="message-sender">John:</p>
+            <p class="message-body">I'm doing great, thanks for asking.</p>
+          </div>
         </div>
       </div>
     </main>
@@ -69,25 +60,23 @@
     </footer>
     
     <script>
-      // JavaScript code for dynamically creating new discussion topics
-      const form = document.querySelector('#new-topic-form');
-      const topicsContainer = document.querySelector('.topics');
+      // JavaScript code for dynamically creating new messages
+      const form = document.querySelector('#new-message-form');
+      const messagesContainer = document.querySelector('#messages-container');
       
       form.addEventListener('submit', (e) => {
         e.preventDefault();
-        const title = form.title.value;
         const body = form.body.value;
-        const newTopic = `
-          <div class="topics">
-            <h3>${title}</h3>
-            <a href="#"><p>${body}</p></a>
+        const newMessage = `
+          <div class="message">
+            <p class="message-sender">You:</p>
+            <p class="message-body">${body}</p>
           </div>
         `;
-        topicsContainer.insertAdjacentHTML('beforeend', newTopic);
+        messagesContainer.insertAdjacentHTML('beforeend', newMessage);
         form.reset();
       });
     </script>
     
   </body>
 </html>
-
