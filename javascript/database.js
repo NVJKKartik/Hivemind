@@ -30,5 +30,16 @@ const pdfSchema = new mongoose.Schema({
     pdfUrl : String
   });
 
+const HourSchema = new mongoose.Schema({
+    Subject : String,
+    hoursConsumed: {
+        type: mongoose.Schema.Types.Decimal128,
+        default: 0.00,
+        get: v => parseFloat(v.toString()), // Convert Decimal128 to number
+        set: v => NumberDecimal.fromString(v.toFixed(2)) // Convert number to Decimal128 with 2 decimal places
+      }
+})
+
 exports.User = mongoose.model("User", userSchema);
 exports.pdfSchema = mongoose.model("PDF",pdfSchema);
+exports.Hours = mongoose.model("Hours", HourSchema);

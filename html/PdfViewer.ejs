@@ -3,6 +3,7 @@
 <head>
 	<title>Profile - HiveMind</title>
 	<link rel="stylesheet" type="text/css" href="/css/Profile.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.quilljs.com/1.3.6/quill.snow.css">
 </head>
 <body>
   <div class="stopwatch-container">
@@ -15,6 +16,7 @@
 	<header>
 		<a href="/"><h1>HiveMind</h1></a>
     <script src="https://webgazer.cs.brown.edu/webgazer.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script>
     <script>
       webgazer.setGazeListener(function(data, elapsedTime) {
       if (data == null) {
@@ -46,6 +48,55 @@
 	<main>
     <iframe src="<%= Url %>" width="70%" height="600px" class="pdf"></iframe>
   </main>
+  <div id="notepad-container" class="notepad-container_closed">
+    <div id="notepad" class="notepad"></div>
+  </div>
+  <div id="notepad-toolbar" class="notepad-toolbar">
+    <button id="notepad-toggle" class="notepad-toggle" onclick="toggleNotepad()">Toggle Notepad</button>
+    <button id="save-button" class="save-button" onclick="downloadNotes()">Save</button>
+  </div>
+  <style>
+    #notepad-container{
+      margin-top: 150px;
+      width : 10%;
+      height :25%;
+    }
+    #notepad-toolbar {
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+  } 
+  </style>
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script>
+     var notepadVisible = document.getElementById("notepad-container");
+     function toggleNotepad(){
+  if (notepadVisible.style.display === "none") {
+    notepadVisible.style.display = "block";
+  } else {
+    notepadVisible.style.display = "none";
+  }
+}
+    var quill = new Quill("#notepad", {
+      modules: {
+        toolbar: [
+          [{ header: [1, 2, false] }],
+          ["bold", "italic", "underline"],
+          ["image", "code-block"],
+          ["notepad-save"]
+        ],
+      },
+      placeholder: "Take some notes...",
+      theme: "snow",
+    });
+
+  function downloadNotes() {
+  var notes = quill.getText(); // Get the text from the notepad
+  var blob = new Blob([notes], {type: "text/plain;charset=utf-8"}); // Create a blob with the text
+  saveAs(blob, "notes.txt"); // Use FileSaver.js to download the blob as a txt file
+}
+  </script>
   
   <script>
     var prediction = webgazer.getCurrentPrediction();

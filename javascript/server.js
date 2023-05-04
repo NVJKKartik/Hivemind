@@ -192,6 +192,8 @@ app.get("/Upload", (req, res) => {
   res.redirect("/html/UploadPage.html")
 });
 
+
+
 async function update(req, res) {
     await User.updateOne({username: req.user.username}, req.body);
     await req.user.save();
