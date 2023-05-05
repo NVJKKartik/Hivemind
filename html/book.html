@@ -4,6 +4,9 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <title>Google Books Embedded Viewer API Example</title>
+    <link rel="stylesheet" type="text/css" href="/css/Profile.css">
+  <link rel="icon" href="/images/logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="https://cdn.quilljs.com/1.3.6/quill.snow.css">
     <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
     <script type="text/javascript">
       google.books.load();
@@ -26,5 +29,172 @@
       <div class="text-center" id="viewerCanvas" style="width: 100%; height: 100%"></div>
     </div>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">   
+    <div class="stopwatch-container">
+      <div id="timer" class="timer">00:00:00.000</div>
+      <button id="start-button" class="timer-button" onclick="startTimer()">Start</button>
+      <button id="stop-button" class="timer-button" onclick="stopTimer()">Stop</button>
+      <button id="reset-button" class="timer-button" onclick="resetTimer()">Reset</button>
+    </div>
+  
+    <header>
+      <a href="/"><h1>HiveMind</h1></a>
+      <script src="https://webgazer.cs.brown.edu/webgazer.js" ></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script>
+      <script>
+        webgazer.setGazeListener(function(data, elapsedTime) {
+        if (data == null) {
+          return;
+        }
+        var xprediction = data.x; //these x coordinates are relative to the viewport
+        var yprediction = data.y; //these y coordinates are relative to the viewport
+   //elapsed time is based on time since begin was called
+      }).begin();
+      </script>
+      <nav>
+              <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="/html/HomePage.html"><i class="fa fa-fw fa-home"> </i>Home</a>
+                <a href="/html/StudyGroup.html"><i class="fa fa-fw fa-search"></i>Search</a>
+                <a href="/html/Resources.html"><i class="fa fa-fw fa-envelope"></i>Resources</a>
+                <a href="/html/ContactUs.html"><i class="fa fa-fw fa-user"></i>Contact Us</a>
+              </div>
+              
+              <div class="container" onclick="openNav()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+                <p>MENU</p>
+              </div>
+            </nav>
+    </header> 
+    <div id="notepad-container" class="notepad-container_closed">
+      <div id="notepad" class="notepad"></div>
+    </div>
+    <div id="notepad-toolbar" class="notepad-toolbar">
+      <button id="notepad-toggle" class="notepad-toggle" onclick="toggleNotepad()">Toggle Notepad</button>
+      <button id="save-button" class="save-button" onclick="downloadNotes()">Save</button>
+    </div>
+    <style>
+      #notepad-container{
+        margin-top: 150px;
+        width : 10%;
+        height :25%;
+      }
+      #notepad-toolbar {
+      position: absolute;
+      top: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+    } 
+    </style>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script>
+       var notepadVisible = document.getElementById("notepad-container");
+       function toggleNotepad(){
+    if (notepadVisible.style.display === "none") {
+      notepadVisible.style.display = "block";
+    } else {
+      notepadVisible.style.display = "none";
+    }
+  }
+      var quill = new Quill("#notepad", {
+        modules: {
+          toolbar: [
+            [{ header: [1, 2, false] }],
+            ["bold", "italic", "underline"],
+            ["image", "code-block"],
+            ["notepad-save"]
+          ],
+        },
+        placeholder: "Take some notes...",
+        theme: "snow",
+      });
+  
+    function downloadNotes() {
+    var notes = quill.getText(); // Get the text from the notepad
+    var blob = new Blob([notes], {type: "text/plain;charset=utf-8"}); // Create a blob with the text
+    saveAs(blob, "notes.txt"); // Use FileSaver.js to download the blob as a txt file
+  }
+    </script>
+    
+    <script>
+      var prediction = webgazer.getCurrentPrediction();
+  if (prediction) {
+    var x = prediction.x;
+    var y = prediction.y;
+    console.log(x, y);
+  }
+    </script>
+  
+    <footer>
+      <p>&copy; 2023 HiveMind. All Rights Reserved.</p>
+    </footer>
+  
+      <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        
+        function myFunction(x) {
+          x.classList.toggle("change");
+        }
+      </script>
+      <script>
+        // Get the timer element from the HTML
+  var timerElement = document.getElementById("timer");
+  
+  // Initialize the timer variables
+  var hours = 0;
+  var minutes = 0;
+  var seconds = 0;
+  var milliseconds = 0;
+  var interval;
+  
+  // Function to start the timer
+  function startTimer() {
+    clearInterval(interval);
+    interval = setInterval(function() {
+      milliseconds += 100;
+      if (milliseconds == 100) {
+        milliseconds = 0;
+        seconds++;
+      }
+      if (seconds == 60) {
+        seconds = 0;
+        minutes++;
+      }
+      if (minutes == 60) {
+        minutes = 0;
+        hours++;
+      }
+      timerElement.innerHTML = (hours ? (hours > 9 ? hours : "0" + hours) : "00")
+        + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00")
+        + ":" + (seconds ? (seconds > 9 ? seconds : "0" + seconds) : "00")
+        + "." + (milliseconds > 9 ? milliseconds : "0" + milliseconds);
+    }, 10);
+  }
+  
+  // Function to stop the timer
+  function stopTimer() {
+    clearInterval(interval);
+  }
+  
+  // Function to reset the timer
+  function resetTimer() {
+    clearInterval(interval);
+    hours = minutes = seconds = milliseconds = 0;
+    timerElement.innerHTML = "00:00:00.000";
+  }
+  // Call the startTimer function when the page finishes loading
+  window.addEventListener("load", function() {
+    startTimer();
+  });
+  
+      </script>
+  
   </body>
 </html>
