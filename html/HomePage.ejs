@@ -32,7 +32,9 @@
 		<section class="hero">
 			<h2>Study Smarter With HiveMind</h2>
 			<p>Collaborate with students around the world to learn faster and more efficiently.</p>
+      <% if (!req.user) { %>
 			<a href="/SignUp" class="btn">Create a New Account</a>
+      <% } %>
 		</section>
 		<main>
 		<h1>Our Features</h1>
