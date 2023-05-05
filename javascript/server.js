@@ -69,8 +69,11 @@ app.get("/Login", (req, res) => {
 
 app.get("/Resources", (req, res) => {
   res.redirect('../html/Resources.html');
-})
+});
 
+app.get("/ContactUs", (req, res) => {
+  res.render("ContactUs");
+});
 
 
 app.post("/SignUp", upload.single('img'), async (req, res) => {
@@ -83,7 +86,6 @@ app.post("/SignUp", upload.single('img'), async (req, res) => {
     username: req.body.username,
     password: req.body.password
   });
-
   res.redirect("/");
 });
 
@@ -177,6 +179,8 @@ app.get("/uploaded_material", isAuthenticated,  async (req, res) => {
 app.get('/PdfViewer', async (req, res) => {
   res.render('PdfViewer', { pdfId: req.query.id });
 });
+
+
 app.get('/discussion', isAuthenticated, async (req, res) => {
   try {
     // Fetch all the messages from the database
@@ -190,7 +194,7 @@ app.get('/discussion', isAuthenticated, async (req, res) => {
   }
 });
 
-app.post('/discussion', isAuthenticated, async (req, res) => {
+app.post('/Discussion', isAuthenticated, async (req, res) => {
   try {
     // Create a new message from the request body
     const newMessage = new Message({
@@ -201,11 +205,9 @@ app.post('/discussion', isAuthenticated, async (req, res) => {
     // Save the message to the database
     await newMessage.save();
 
-    // Fetch all the messages from the database
-    const messages = await Message.find().sort({ timestamp :-1 }).limit(10);
 
     // Render the discussion view with the new message and all the existing messages
-    res.render('discussion', { messages });
+    res.redirect('/Discussion');
   } catch (error) {
     console.error(error);
     res.status(500).send('Server error');
@@ -248,8 +250,8 @@ app.post("/Settings", (req, res) => {
   res.redirect("/Profile");
 });
 
-app.get("/Upload", (req, res) => {
-  res.redirect("/html/UploadPage.html")
+app.get("/Upload", isAuthenticated, (req, res) => {
+  res.render("UploadPage");
 });
 
 async function update(req, res) {
