@@ -24,10 +24,10 @@
 	  </nav>
 	<h1>Your Uploaded Study Materials</h1>
 	<ul>
-		<li><a href="/uploads/project_report.pdf">File 1</a></li>
-		<li><a href="/uploads/Ethics Reference.pdf">File 2</a></li>
-		<li><a href="/uploads/DBMS ASS-2.pdf">File 3</a></li>
-	</ul>
+    <% pdfs.forEach((pdf) => { %>
+      <li><a href="/pdf/<%= pdf._id %>"><%= pdf.filename %></a></li>
+    <% }) %>
+  </ul>
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";

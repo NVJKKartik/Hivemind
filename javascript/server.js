@@ -66,6 +66,10 @@ app.get("/Login", (req, res) => {
   res.render("Login");
 });
 
+app.get("/Resources", (req, res) => {
+  res.redirect('../html/Resources.html');
+})
+
 app.post("/SignUp", upload.single('img'), async (req, res) => {
   const user = await User.findOne({ username: req.body.username });
   if (user) return res.status(400).send("User already exists!");
@@ -153,6 +157,16 @@ app.get("/pdf/:id", async (req, res) => {
       return res.status(404).send("PDF not found");
     }
 
+    res.status(500).send("Internal server error");
+  }
+});
+
+app.get("/uploaded_material", isAuthenticated,  async (req, res) => {
+  try {
+    const pdfs = await pdfSchema.find({ username: req.user.username }).sort({ uploadDate: -1 });
+    res.render("uploaded_material", { pdfs });
+  } catch (error) {
+    console.error(error);
     res.status(500).send("Internal server error");
   }
 });
