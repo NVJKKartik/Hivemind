@@ -1,0 +1,38 @@
+body {
+    background-image: url("/images/dash_back.jpg");
+    background-color: black;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  img{
+    width:100px;
+    height:100px;
+  }
+  .center {
+    margin: auto;
+    margin-top: 200px;
+  }
+  h1{
+    color:white;
+  }
+
+  .container{
+    margin-top: -100px;
+  }
+  
+  #header {
+    font-family: 'Righteous', sans-serif;
+    font-size: 3rem;
+  }
+  
+  h2 {
+    color:white;
+    font-family: 'Righteous', sans-serif;
+  }
+  
+  .book-list {
+    margin-top: 50px;
+    visibility: hidden;
+  }
