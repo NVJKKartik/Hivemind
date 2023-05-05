@@ -102,13 +102,12 @@ body {
     border: 1 dashed rgba(255,255,255,0.1);
     text-decoration: none;
     border-radius: 0px;
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(0,0,0,0.5);
     border: 1px solid rgba(255,255,255,0.1);
     backdrop-filter: blur(30px);
     color: rgba(255,255,255,0.8);
     font-size: 18px;
     letter-spacing: 2px;
-    cursor: pointer;
   }
   
   .developer img {
@@ -137,9 +136,11 @@ body {
   }
   
   .footer-container {
+    margin-left: 550px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 13px;
   }
   
   .footer-container ul {

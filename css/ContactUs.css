@@ -149,7 +149,6 @@ main h2{
 	color: rgba(255,255,255,0.8);
 	font-size: 20px;
 	letter-spacing: 2px;
-	cursor: pointer;
 	text-transform: uppercase;
 }
 h2 {
@@ -170,7 +169,7 @@ label {
 	font-weight: bold;
 }
 
-input[type="text"], input[type="email"], textarea {
+input[type="text"], input[type="number"], input[type="email"], textarea {
 	padding: 10px;
 	margin-bottom: 20px;
 	border: 1px solid #ccc;
@@ -190,6 +189,7 @@ textarea {
 	background-color: rgba(255,255,255,0.1);
 	border: 1px solid rgba(255,255,255,0.1);
 	backdrop-filter: blur(100px);
+	cursor: pointer;
 }
 
 .btn:hover {
