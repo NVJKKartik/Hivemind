@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Discussion Forum - HiveMind</title>
+    <link rel="stylesheet" href="/css/discussion.css">
+    <link rel="icon" href="/images/logo.jpg" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/html/HomePage.html">Home</a></li>
+          <li><a href="/html/Dashboard.html">Dashboard</a></li>
+          <li><a href="/html/SignUp.html">Sign Up</a></li>
+          <li><a href="/html/Profile.html">Profile</a></li>
+          <li><a href="/html/Resources.html">Resources</a></li>
+          <li><a href="/html/StudyGroup.html">Study Group</a></li>
+          <li><a href="/html/UploadPage.html">Upload</a></li>
+          <li><a href="/html/Settings.html">Settings</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+      <main>
+        <h1>Discussion Forum</h1>
+        <form id="new-message-form" method="POST" action="/discussion">
+          <label for="message-body">Message:</label>
+          <textarea id="message-body" name="body" placeholder="Type your message here" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      
+        <div class="containers">
+          <h2>Messages</h2>
+          <div id="messages-container">
+            <% messages.forEach((message) => { %>
+              <div class="message">
+                <p class="message-sender"><%= message.name %>:</p>
+                <p class="message-time"><%= message.timestamp %>:</p>
+                <p class="message-body"><%= message.body %></p>
+              </div>
+            <% }) %>
+          </div>
+        </div>
+        
+      </main>
+      
+
+    <footer>
+      <div class="footer-container">
+        <p>&copy; 2023 HiveMind. All rights reserved.</p>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

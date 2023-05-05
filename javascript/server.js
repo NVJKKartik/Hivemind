@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const { connectMongoose, User, pdfSchema } = require("./database.js");
+const { connectMongoose, User, pdfSchema, Message } = require("./database.js");
 const passport = require("passport");
 const {
   initializingPassport,
@@ -27,6 +27,7 @@ var upload = multer({ storage: storage })
 
 // Initialize Firebase Admin SDK
 const serviceAccount = require('./hivemind-382804-firebase-adminsdk-pdnb4-f3dcffdd7a.json');
+const { Timestamp } = require("mongodb");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   storageBucket: 'gs://hivemind-382804.appspot.com/',
@@ -69,6 +70,8 @@ app.get("/Login", (req, res) => {
 app.get("/Resources", (req, res) => {
   res.redirect('../html/Resources.html');
 })
+
+
 
 app.post("/SignUp", upload.single('img'), async (req, res) => {
   const user = await User.findOne({ username: req.body.username });
@@ -174,10 +177,40 @@ app.get("/uploaded_material", isAuthenticated,  async (req, res) => {
 app.get('/PdfViewer', async (req, res) => {
   res.render('PdfViewer', { pdfId: req.query.id });
 });
+app.get('/discussion', isAuthenticated, async (req, res) => {
+  try {
+    // Fetch all the messages from the database
+    const messages = await Message.find().sort({ timestamp: -1 }).limit(10);
 
-app.get('/Discussions', async (req, res) => {
-  res.redirect('../html/discussion.html');
-})
+    // Render the discussion view with all the messages
+    res.render('discussion', { messages });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Server error');
+  }
+});
+
+app.post('/discussion', isAuthenticated, async (req, res) => {
+  try {
+    // Create a new message from the request body
+    const newMessage = new Message({
+      name: req.user.name,
+      body: req.body.body,
+    });
+
+    // Save the message to the database
+    await newMessage.save();
+
+    // Fetch all the messages from the database
+    const messages = await Message.find().sort({ timestamp :-1 }).limit(10);
+
+    // Render the discussion view with the new message and all the existing messages
+    res.render('discussion', { messages });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Server error');
+  }
+});
  
 app.post(
   "/Login",

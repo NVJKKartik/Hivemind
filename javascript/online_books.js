@@ -93,3 +93,16 @@ $(document).ready(function() {
      }
   
   });
+      // Get the search box input and search button elements
+      const searchBox = document.getElementById('search-box');
+      const searchButton = document.getElementById('search');
+      
+      // Add a keyup event listener to the search box input
+      searchBox.addEventListener('keyup', function(event) {
+        // Check if the Enter key was pressed
+        if (event.keyCode === 13) {
+          // Trigger a click event on the search button
+          searchButton.click();
+        }
+      });
+    

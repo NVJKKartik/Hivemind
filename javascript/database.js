@@ -44,6 +44,22 @@ const HourSchema = new mongoose.Schema({
       }
 })
 
+const messageSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    body: {
+        type: String,
+        required: true
+    },
+    timestamp: {
+        type: Date,
+        default: Date.now
+    }
+});
+
+exports.Message = mongoose.model("Message", messageSchema);
 exports.User = mongoose.model("User", userSchema);
 exports.pdfSchema = mongoose.model("PDF",pdfSchema);
 exports.Hours = mongoose.model("Hours", HourSchema);
