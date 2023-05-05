@@ -4,11 +4,58 @@ body {
     font-family: Arial, sans-serif;
     background-image: url("/images/dash_back.jpg");
     color:white;
+    overflow-x: hidden;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    color:white
+  }
+
+nav ul {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+nav ul p{
+	font-size: 22px;
+	font-style: italic;
+	color:rgba(255,255,255,0.6);
+	margin-left: -300px;
+}
+
+nav li {
+	margin-right: 1em;
+}
+
+nav a {
+	display: flex;
+	padding: 20px 32px;
+	border: 0;
+	text-decoration: none;
+  font-family: tahoma;
+	border-radius: 20px;
+	background-color: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255,255,255,0.1);
+	backdrop-filter: blur(30px);
+	color: rgba(255,255,255,0.8);
+	font-size: 14px;
+	letter-spacing: 2px;
+	cursor: pointer;
+	text-transform: uppercase;
+	
+  }
+ 
+nav a:hover {
+	background-color: rgba(255,255,255,0.2);
   }
 
 .profile-pic-div{
   margin-left: -600px;
-  margin-top: -200px;
+  margin-top: -100px;
   height: 200px;
   width: 200px;
   position: absolute;
@@ -20,6 +67,7 @@ body {
   overflow: hidden;
   border: 1px solid grey;
 }
+
 
 #photo{
   height: 100%;
@@ -46,46 +94,6 @@ body {
   cursor: pointer;
   display: none;
 } 
-  header {
-    /* background-color: #333; */
-    color: #fff;
-    padding: 1em;
-  }
-  nav{
-    margin-left: 800px;
-  }
-  
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav li {
-    display: inline-block;
-    margin-right: 1em;
-  }
-
-  
-  nav a {
-  display: inline-block;
-	padding: 10px 16px;
-	border: 0;
-	text-decoration: none;
-	border-radius: 20px;
-	background-color: rgba(255,255,255,0.1);
-	border: 1px solid rgba(255,255,255,0.1);
-	backdrop-filter: blur(30px);
-	color: rgba(255,255,255,0.8);
-	font-size: 14px;
-	letter-spacing: 2px;
-	cursor: pointer;
-	text-transform: uppercase;
-  }
-
-  nav a:hover{
-  background-color: rgba(255,255,255,0.2);
-  }
   
   
   main {
@@ -143,8 +151,10 @@ body {
   }
   
   .footer-container {
+    margin-left: 500px;
     display: flex;
     justify-content: space-between;
+    text-align: center;
   }
   
   .footer-container p {

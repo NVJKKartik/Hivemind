@@ -68,7 +68,7 @@ app.get("/Login", (req, res) => {
 });
 
 app.get("/Resources", (req, res) => {
-  res.redirect('../html/Resources.html');
+  res.render("Resources");
 });
 
 app.get("/ContactUs", (req, res) => {
@@ -181,7 +181,7 @@ app.get('/PdfViewer', async (req, res) => {
 });
 
 
-app.get('/discussion', isAuthenticated, async (req, res) => {
+app.get('/Discussion', isAuthenticated, async (req, res) => {
   try {
     // Fetch all the messages from the database
     const messages = await Message.find().sort({ timestamp: -1 }).limit(10);
