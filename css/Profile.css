@@ -19,8 +19,6 @@ header img{
 	height:100px;
 }
 
-
-
 .sidenav {
 	background-image: url("/images/dash_back.jpg");
     height: 100%; 
@@ -151,18 +149,11 @@ h2 {
 }
 
 .profile-info img {
-	width: 90px;
-	height: 110px;
-	border-radius: 60%;
-	margin-bottom: 20px;
-	transition: all 0.3s;
-}
-
-.profile-info img:hover {
 	width: 200px;
 	height: 220px;
 	border-radius: 60%;
 	margin-bottom: 20px;
+	transition: all 0.3s;
 }
 
 .profile-info h3 {
@@ -183,7 +174,6 @@ h2 {
 	color: rgba(255,255,255,0.8);
 	font-size: 18px;
 	letter-spacing: 2px;
-	cursor: pointer;
 } 
 
  main p{
@@ -198,7 +188,6 @@ h2 {
 	color: rgba(255,255,255,0.8);
 	font-size: 15px;
 	letter-spacing: 2px;
-	cursor: pointer;
 	font-weight: 800; }
 
 
