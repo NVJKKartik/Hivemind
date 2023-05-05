@@ -194,20 +194,20 @@ app.get('/Discussion', isAuthenticated, async (req, res) => {
   }
 });
 
-app.post('/Discussion', isAuthenticated, async (req, res) => {
+app.post('/discussion', isAuthenticated, upload.single('image'), async (req, res) => {
   try {
     // Create a new message from the request body
     const newMessage = new Message({
       name: req.user.name,
       body: req.body.body,
+      image: req.file ? `/uploads/${req.file.filename}` : undefined
     });
 
     // Save the message to the database
     await newMessage.save();
 
-
     // Render the discussion view with the new message and all the existing messages
-    res.redirect('/Discussion');
+    res.redirect('/discussion');
   } catch (error) {
     console.error(error);
     res.status(500).send('Server error');

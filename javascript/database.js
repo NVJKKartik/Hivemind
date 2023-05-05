@@ -46,18 +46,22 @@ const HourSchema = new mongoose.Schema({
 
 const messageSchema = new mongoose.Schema({
     name: {
-        type: String,
-        required: true
+      type: String,
+      required: true
     },
     body: {
-        type: String,
-        required: true
+      type: String,
+      required: true
+    },
+    image: {
+      type: String // stores the URL of the uploaded image
     },
     timestamp: {
-        type: Date,
-        default: Date.now
+      type: Date,
+      default: Date.now
     }
-});
+  });
+  
 
 exports.Message = mongoose.model("Message", messageSchema);
 exports.User = mongoose.model("User", userSchema);
