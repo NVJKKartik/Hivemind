@@ -23,7 +23,7 @@
         <h1>Discussion Forum</h1>
         <form id="new-message-form" method="POST" action="/discussion" enctype="multipart/form-data">
           <label for="message-body">Message:</label>
-          <textarea id="message-body" name="body" placeholder="Type your message here"></textarea>
+          <textarea id="message-body" name="body" placeholder="Type your message here" required></textarea>
           <input type="file" id="img" name="img" accept="image/jpeg">
           <button id="Send" type="submit">Send</button>
         </form>
