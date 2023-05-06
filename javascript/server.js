@@ -92,12 +92,17 @@ app.post("/SignUp", upload.single('img'), async (req, res) => {
   deleteFiles(filesToDelete)
   res.redirect("/");
 });
+
+
 app.get("/PdfViewer", (req,res)=>{
   if(req.method == 'GET')
   {
     res.redirect("/Upload");
   }
 })
+
+
+
 app.post("/PdfViewer", upload.single('myPdf'), async (req, res) => {
     try {
         const pdf = fs.readFileSync(req.file.path);
@@ -140,6 +145,10 @@ app.post("/PdfViewer", upload.single('myPdf'), async (req, res) => {
       });
 
        blobStream.end(pdf);
+       const filesToDelete = [];
+       const filepathToDelete = "uploads/" + req.file.filename
+       filesToDelete.push(filepathToDelete);
+       deleteFiles(filesToDelete)
     } catch (err) {
         console.log(err);
         res.status(500).send("Failed to save PDF to database");
