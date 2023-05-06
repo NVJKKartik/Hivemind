@@ -53,9 +53,9 @@ const messageSchema = new mongoose.Schema({
       type: String,
       required: true
     },
-    image: {
-      type: String // stores the URL of the uploaded image
-    },
+    img : {
+      type: Buffer
+  },
     timestamp: {
       type: Date,
       default: Date.now

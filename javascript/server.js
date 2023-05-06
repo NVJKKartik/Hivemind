@@ -187,27 +187,27 @@ app.get('/Discussion', isAuthenticated, async (req, res) => {
     const messages = await Message.find().sort({ timestamp: -1 }).limit(10);
 
     // Render the discussion view with all the messages
-    res.render('discussion', { messages });
+    res.render('Discussion', { messages });
   } catch (error) {
     console.error(error);
     res.status(500).send('Server error');
   }
 });
 
-app.post('/discussion', isAuthenticated, upload.single('image'), async (req, res) => {
+app.post('/Discussion', isAuthenticated, upload.single('img'), async (req, res) => {
   try {
     // Create a new message from the request body
     const newMessage = new Message({
       name: req.user.name,
       body: req.body.body,
-      image: req.file ? `/uploads/${req.file.filename}` : undefined
+      img: req.file ? fs.readFileSync("uploads/" + req.file.filename) : undefined
     });
 
     // Save the message to the database
     await newMessage.save();
 
     // Render the discussion view with the new message and all the existing messages
-    res.redirect('/discussion');
+    res.redirect('/Discussion');
   } catch (error) {
     console.error(error);
     res.status(500).send('Server error');

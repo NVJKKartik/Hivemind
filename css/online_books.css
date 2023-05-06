@@ -4,14 +4,9 @@ html{
 
 body {
     background-color: black;
-<<<<<<< Updated upstream
-    background-repeat:no-repeat;
-    background-size:cover;
-=======
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
->>>>>>> Stashed changes
   }
   img{
     width:100px;

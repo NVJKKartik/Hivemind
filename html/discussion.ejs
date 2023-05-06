@@ -7,16 +7,14 @@
   </head>
   <body>
     <header>
+      <a href="/"><img src="/images/logo.jpg" style="width: 100px; height: 100px;"></a>
       <nav>
         <ul>
-          <li><a href="/html/HomePage.html">Home</a></li>
-          <li><a href="/html/Dashboard.html">Dashboard</a></li>
-          <li><a href="/html/SignUp.html">Sign Up</a></li>
-          <li><a href="/html/Profile.html">Profile</a></li>
-          <li><a href="/html/Resources.html">Resources</a></li>
-          <li><a href="/html/StudyGroup.html">Study Group</a></li>
-          <li><a href="/html/UploadPage.html">Upload</a></li>
-          <li><a href="/html/Settings.html">Settings</a></li>
+          <li><a href="/Dashboard">Dashboard</a></li>
+          <li><a href="/Profile">Profile</a></li>
+          <li><a href="/Resources">Resources</a></li>
+          <li><a href="/Upload">Upload</a></li>
+          <li><a href="/Logout">Logout</a></li>
         </ul>
       </nav>
     </header>
@@ -25,8 +23,8 @@
         <h1>Discussion Forum</h1>
         <form id="new-message-form" method="POST" action="/discussion" enctype="multipart/form-data">
           <label for="message-body">Message:</label>
-          <textarea id="message-body" name="body" placeholder="Type your message here" required></textarea>
-          <input type="file" name="image">
+          <textarea id="message-body" name="body" placeholder="Type your message here"></textarea>
+          <input type="file" id="img" name="img" accept="image/jpeg">
           <button id="Send" type="submit">Send</button>
         </form>
         
@@ -38,8 +36,8 @@
               <div class="message">
                 <p class="message-sender"><%= message.name %>:</p>
                 <p class="message-time"><%= message.timestamp %>:</p>
-                <% if (message.image) { %>
-                  <img class="message-image" src="<%= message.image %>" height="500px" width="800px" style="cursor: zoom-in" onclick="zoomImage(this)">
+                <% if (message.img) { %>
+                  <img class="message-image" src="data:image/jpg;base64, <%=message.img.toString('base64')%>" height="500px" width="800px" style="cursor: zoom-in" onclick="zoomImage(this)">
                 <% } %>
                 <p class="message-body"><%= message.body %></p>
               </div>
