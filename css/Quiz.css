@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: tahoma, Arial;
   margin: 0;
   padding: 0;
   background-image:url("/images/dash_back.jpg") ;
@@ -52,6 +52,7 @@ header {
   #main {
     transition: margin-left .5s;
     padding: 20px;
+    font-family: tahoma;
   }
   
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -129,6 +130,7 @@ main h1{
 	backdrop-filter: blur(30px);
 	color: rgba(255,255,255,0.8);
 	font-size: 25px;
+  margin-left: 200px;
 	letter-spacing: 2px;
 	cursor: pointer;
 	text-transform: uppercase;
@@ -187,12 +189,14 @@ button {
   display: flex;
 	padding: 30px 650px;
 	border: 0;
+  font-size: 30px;
+  font-family: tahoma;
+  width: 100%;
 	border-radius: 1px;
 	background-color: rgba(255,255,255,0.3);
 	border: 1px solid rgba(255,255,255,0.1);
 	backdrop-filter: blur(30px);
 	color: rgb(0, 0, 0);
-	font-size: 14px;
 	letter-spacing: 2px;
 	cursor: pointer;
 	text-transform: uppercase;
@@ -206,6 +210,7 @@ footer {
   padding: 10px;
   bottom: 0;
   left: 0;
+  margin-left: 750px;
   width: 100%;
   border: 1px dashed rgba(255,255,255,0.5);
 }

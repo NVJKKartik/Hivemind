@@ -55,6 +55,7 @@ main {
 
 h2 {
 	margin-top: 0;
+	font-family: tahoma;
 }
 
 /* Dashboard Styles */
@@ -191,4 +192,5 @@ footer{
 	color:white;
 	align-self: right;
 	border: 1px dashed rgba(255,255,255,0.1);
+	margin-left: 740px;
 }
