@@ -82,7 +82,7 @@ app.post("/SignUp", upload.single('img'), async (req, res) => {
   if (user) return res.status(400).send("User already exists!");
   const newUser = await User.create({
     name: req.body.name,
-    img: fs.readFileSync("uploads/" + req.file.filename),
+    img: req.file ? fs.readFileSync("uploads/" + req.file.filename) : fs.readFileSync("uploads/" + "stock.jpeg"),
     joinDate: new Date(),
     username: req.body.username,
     password: req.body.password
@@ -259,8 +259,7 @@ app.post("/Settings", upload.single('img'), async (req, res) => {
   req.user.username = req.body.email || req.user.username;
   req.user.password = req.body.password || req.user.password;
   req.user.notifications = req.body.notifications || req.user.notifications;
-    req.user.img = fs.readFileSync("uploads/" + req.file.filename);
-  
+  req.user.img = req.file?.filename ? fs.readFileSync("uploads/" + req.file.filename) : req.user.img;  
   await req.user.save(); 
   res.redirect("/Profile");
 });
