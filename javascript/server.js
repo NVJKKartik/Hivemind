@@ -269,6 +269,9 @@ app.get("/Upload", isAuthenticated, (req, res) => {
   res.render("UploadPage");
 });
 
+app.get("/html/book", isAuthenticated, (req, res) => {
+  res.render("book");
+})
 
 app.listen(3000, () => {
   console.log("listening on 3000");

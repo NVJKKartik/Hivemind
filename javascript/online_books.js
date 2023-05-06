@@ -67,7 +67,7 @@ $(document).ready(function() {
 
      function formatOutput(bookImg, title, author, publisher, bookLink, bookIsbn) {
 
-       var viewUrl = 'book.html?isbn='+bookIsbn; 
+       var viewUrl = 'book?isbn='+bookIsbn; 
        var htmlCard = `<div class="col-lg-6">
          <div class="card" style="">
            <div class="row no-gutters">
@@ -79,7 +79,7 @@ $(document).ready(function() {
                  <h5 class="card-title">${title}</h5>
                  <p class="card-text">Author: ${author}</p>
                  <p class="card-text">Publisher: ${publisher}</p>
-                 <a target="_blank" href="${viewUrl}" class="btn btn-secondary">Read Book</a>
+                 <a target="_blank" href="${viewUrl}" class="btn btn-secondary" action = "Post">Read Book</a>
                </div>
              </div>
            </div>
