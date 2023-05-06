@@ -6,7 +6,7 @@ const startQuizBtn = topicForm.querySelector('button');
 topicForm.addEventListener('submit', (event) => {
   event.preventDefault(); // prevent form from submitting
   const selectedTopic = topicForm.querySelector('input[name="topic"]:checked').value;
-  window.location.href = `${selectedTopic}quiz.html`;
+  window.location.href = `${selectedTopic}quiz`;
 });
 
 function openNav() {
