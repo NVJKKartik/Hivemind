@@ -147,7 +147,7 @@ app.post("/PdfViewer", upload.single('myPdf'), async (req, res) => {
 });
 
 
-app.get("/pdf/:id", async (req, res) => {
+app.get("/pdf/:id", isAuthenticated, async (req, res) => {
   const pdfId = req.params.id;
 
   try {
@@ -314,6 +314,15 @@ function deleteFiles(filesToDelete) {
   });
 }
 
-app.listen(3000, () => {
-  console.log("listening on 3000");
+app.use(function(req, res, next) {
+  res.status(404);
+
+  // redirect to custom error page
+  res.render('/404');
+});
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`listening on port ${port}`);
 });
