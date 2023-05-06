@@ -1,11 +1,11 @@
 /* Global Styles */
 
 body {
-	font-family: Arial, sans-serif;
+	font-family: tahoma, Arial;
 	font-size: 16px;
 	margin: 0;
 	padding: 0;
-	background-image: url(/images/dash_back.jpg);
+	background-image: url(/images/dash_back1.jpg);
 }
 header {
 	/* background-color: #222; */
@@ -27,7 +27,7 @@ nav ul {
 }
 
 .sidenav {
-	background-image: url("/images/dash_back.jpg");
+	background-image: url("/images/dash_back1.jpg");
     height: 100%; 
     width: 0; 
     position: fixed; 
@@ -180,24 +180,22 @@ h2 {
 }
 .study-group h2{
 	font-weight: 800;
-	font-family: "Times New Roman";
+	font-family: tahoma;
 	margin-bottom: 25px;
 	padding: 15px 25px;
-	background-color: rgba(255,255,255,0.1);
-	border: 0.2px solid rgba(255,255,255,0.1);
+	
 	width:100%;
 	color:bisque;
 }
 
 .study-group ul {
-	margin: 0;
-	padding: 0;
 	margin-bottom: 25px;
 	padding: 15px 25px;
+	font-family: tahoma;
 	background-color: rgba(255,255,255,0.1);
 	border: 0.2px solid rgba(255,255,255,0.1);
 	width:100%;
-	color:white;
+	color:bisque;
 }
 
 .study-group li {
@@ -208,14 +206,14 @@ h2 {
 .quiz-history h2{
 	margin-bottom: 25px;
 	padding: 15px 25px;
-	background-color: rgba(255,255,255,0.1);
-	border: 0.2px solid rgba(255,255,255,0.1);
+	font-family: tahoma;
 	width:100%;
 	color:bisque;
 }
 .quiz-history table {
 	border-collapse: collapse;
 	margin-bottom: 25px;
+	font-family: tahoma;
 	padding: 15px 25px;
 	background-color: rgba(255,255,255,0.1);
 	border: 0.2px solid rgba(255,255,255,0.1);
