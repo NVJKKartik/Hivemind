@@ -28,7 +28,6 @@ var upload = multer({ storage: storage })
 // Initialize Firebase Admin SDK
 const serviceAccount = require('./hivemind-382804-firebase-adminsdk-pdnb4-f3dcffdd7a.json');
 const { Timestamp } = require("mongodb");
-const { NULL } = require("node-sass");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   storageBucket: 'gs://hivemind-382804.appspot.com/',
@@ -87,6 +86,10 @@ app.post("/SignUp", upload.single('img'), async (req, res) => {
     username: req.body.username,
     password: req.body.password
   });
+  const filesToDelete = [];
+  const filepathToDelete = "uploads/" + req.file.filename
+  filesToDelete.push(filepathToDelete);
+  deleteFiles(filesToDelete)
   res.redirect("/");
 });
 app.get("/PdfViewer", (req,res)=>{
@@ -213,12 +216,18 @@ app.post('/Discussion', isAuthenticated, upload.single('img'), async (req, res) 
     // Save the message to the database
     await newMessage.save();
 
+    const filesToDelete = [];
+    const filepathToDelete = "uploads/" + req.file.filename
+    filesToDelete.push(filepathToDelete);
+    deleteFiles(filesToDelete)
+
     // Render the discussion view with the new message and all the existing messages
     res.redirect('/Discussion');
   } catch (error) {
     console.error(error);
     res.status(500).send('Server error');
   }
+
 });
  
 app.post(
@@ -277,6 +286,10 @@ app.post("/Settings", upload.single('img'), async (req, res) => {
   req.user.notifications = req.body.notifications || req.user.notifications;
   req.user.img = req.file?.filename ? fs.readFileSync("uploads/" + req.file.filename) : req.user.img;  
   await req.user.save(); 
+  const filesToDelete = [];
+  const filepathToDelete = "uploads/" + req.file.filename
+  filesToDelete.push(filepathToDelete);
+  deleteFiles(filesToDelete)
   res.redirect("/Profile");
 });
 
@@ -288,6 +301,18 @@ app.get("/Upload", isAuthenticated, (req, res) => {
 app.get("/html/book", isAuthenticated, (req, res) => {
   res.render("book");
 })
+
+function deleteFiles(filesToDelete) {
+  filesToDelete.forEach(file => {
+    fs.unlink(file, (err) => {
+      if (err) {
+        console.error(`Error deleting file ${file}: ${err}`);
+      } else {
+        console.log(`File ${file} deleted successfully`);
+      }
+    });
+  });
+}
 
 app.listen(3000, () => {
   console.log("listening on 3000");
