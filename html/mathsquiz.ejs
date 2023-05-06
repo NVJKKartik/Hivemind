@@ -30,22 +30,22 @@
             </div>
             <div>
               <input type="radio" id="q1-b" name="q1" value="b">
-              <label for="q1-b">B. 4</label>
+              <label for="q1-b">B. 3.33</label>
             </div>
             <div>
               <input type="radio" id="q1-c" name="q1" value="c">
-              <label for="q1-c">C. 5</label>
+              <label for="q1-c">C. -3</label>
             </div>
             <div>
               <input type="radio" id="q1-d" name="q1" value="d">
-              <label for="q1-d">D. 6</label>
+              <label for="q1-d">D. 4</label>
             </div>
           </li>
           <li>
             <h3>What is the area of a rectangle with length 6 cm and width 8 cm?</h3>
             <div>
               <input type="radio" id="q2-a" name="q2" value="a">
-              <label for="q2-a">A. 12 cm^2</label>
+              <label for="q2-a">A. 0.48 m^2</label>
             </div>
             <div>
               <input type="radio" id="q2-b" name="q2" value="b">
@@ -53,7 +53,7 @@
             </div>
             <div>
               <input type="radio" id="q2-c" name="q2" value="c">
-              <label for="q2-c">C.  32 cm^2</label>
+              <label for="q2-c">C.  0.24 m^2</label>
             </div>
             <div>
               <input type="radio" id="q2-d" name="q2" value="d">
@@ -64,19 +64,19 @@
             <h3>If a pizza has a diameter of 12 inches, what is its circumference?</h3>
             <div>
               <input type="radio" id="q3-a" name="q3" value="a">
-              <label for="q3-a">A. 12π inches</label>
+              <label for="q3-a">A. 12pi inches</label>
             </div>
             <div>
               <input type="radio" id="q3-b" name="q3" value="b">
-              <label for="q3-a">B. 24π inches</label>
+              <label for="q3-a">B. 24pi inches</label>
             </div>
             <div>
             <input type="radio" id="q3-c" name="q3" value="c">
-            <label for="q3-a">C. 36π inches</label>
+            <label for="q3-a">C. 36pi inches</label>
            </div>
             <div>
             <input type="radio" id="q3-d" name="q3" value="d">
-            <label for="q3-a">D. 48π inches</label>
+            <label for="q3-a">D. 48pi inches</label>
             </div>
             </li>
             <li>
@@ -99,10 +99,10 @@
             </div>
             </li>
             <li>
-            <h3>If 3x + 2y = 12 and 4x - y = 6, what is the value of x?</h3>
+            <h3>If 3x + y = 9 and 2x - y = 6, what is the value of x?</h3>
             <div>
             <input type="radio" id="q5-a" name="q5" value="a">
-            <label for="q5-a">A. -2</label>
+            <label for="q5-a">A. -3</label>
             </div>
             <div>
             <input type="radio" id="q5-b" name="q5" value="b">
@@ -110,11 +110,11 @@
             </div>
             <div>
             <input type="radio" id="q5-c" name="q5" value="c">
-            <label for="q5-c">C. 1</label>
+            <label for="q5-c">C. 2</label>
             </div>
             <div>
             <input type="radio" id="q5-d" name="q5" value="d">
-            <label for="q5-d">D. 2</label>
+            <label for="q5-d">D. 3</label>
             </div>
             </li>
             </ol>
@@ -124,6 +124,38 @@
         <footer>
               <p>&copy; 2023 HiveMind</p>
         </footer>
-        <script src="/javascript/sciencequiz.js"></script>
+        <script>
+          // select the form element
+const quizForm = document.querySelector('#quiz-form');
+
+// add event listener for form submission
+quizForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // prevent the form from submitting
+  
+  let score = 0; // initialize score to zero
+  
+  // create an array of objects with the correct answers
+  const answers = [
+    { question: 'q1', answer: 'a' },
+    { question: 'q2', answer: 'd' },
+    { question: 'q3', answer: 'a' },
+    { question: 'q4', answer: 'd' },
+    { question: 'q5', answer: 'd' }
+  ];
+  
+  // loop through each question and check the answer
+  for (let i = 0; i < answers.length; i++) {
+    const answer = answers[i];
+    const selected = document.querySelector(`input[name=${answer.question}]:checked`);
+    if (selected && selected.value === answer.answer) {
+      score += 1; // add 1 to score for each correct answer
+    }
+  }
+  
+  // display the score
+  alert(`You scored ${score} out of 5`);
+});
+
+        </script>
     </body>
 </html>

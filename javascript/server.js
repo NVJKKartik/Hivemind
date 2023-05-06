@@ -172,7 +172,7 @@ app.get("/pdf/:id", async (req, res) => {
   }
 });
 
-app.get("/uploaded_material", isAuthenticated,  async (req, res) => {
+app.get("/Uploaded", isAuthenticated,  async (req, res) => {
   try {
     const pdfs = await pdfSchema.find({ username: req.user.username }).sort({ uploadDate: -1 });
     if(pdfs.length === 0){
@@ -225,7 +225,7 @@ app.post(
   "/Login",
   passport.authenticate("local", { failureRedirect: "/Login" }),
   (req, res) => {
-    res.redirect("/Profile");
+    res.redirect("/Dashboard");
   }
 );
 
@@ -242,6 +242,22 @@ app.get("/Logout", (req, res, done) => {
 
 app.get("/Dashboard", isAuthenticated,  (req, res) => {
   res.render("Dashboard", {req : req});
+});
+
+app.get("/Quiz", isAuthenticated,  (req, res) => {
+  res.render("Quiz", {req : req});
+});
+
+app.get("/sciencequiz", isAuthenticated,  (req, res) => {
+  res.render("sciencequiz", {req : req});
+});
+
+app.get("/mathsquiz", isAuthenticated,  (req, res) => {
+  res.render("mathsquiz", {req : req});
+});
+
+app.get("/csquiz", isAuthenticated,  (req, res) => {
+  res.render("csquiz", {req : req});
 });
 
 app.get("/AboutUs", (req, res) => {
