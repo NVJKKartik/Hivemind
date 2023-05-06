@@ -181,12 +181,22 @@ h2 {
 .study-group h2{
 	font-weight: 800;
 	font-family: "Times New Roman";
+	margin-bottom: 25px;
+	padding: 15px 25px;
+	background-color: rgba(255,255,255,0.1);
+	border: 0.2px solid rgba(255,255,255,0.1);
+	width:100%;
 	color:bisque;
 }
 
 .study-group ul {
 	margin: 0;
 	padding: 0;
+	margin-bottom: 25px;
+	padding: 15px 25px;
+	background-color: rgba(255,255,255,0.1);
+	border: 0.2px solid rgba(255,255,255,0.1);
+	width:100%;
 	color:white;
 }
 
@@ -196,10 +206,20 @@ h2 {
 	color:white;
 }
 .quiz-history h2{
+	margin-bottom: 25px;
+	padding: 15px 25px;
+	background-color: rgba(255,255,255,0.1);
+	border: 0.2px solid rgba(255,255,255,0.1);
+	width:100%;
 	color:bisque;
 }
 .quiz-history table {
 	border-collapse: collapse;
+	margin-bottom: 25px;
+	padding: 15px 25px;
+	background-color: rgba(255,255,255,0.1);
+	border: 0.2px solid rgba(255,255,255,0.1);
+	width:100%;
 	width: 100%;
 	color:white;
 }

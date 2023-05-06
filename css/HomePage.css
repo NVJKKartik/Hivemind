@@ -52,10 +52,11 @@ nav ul {
 	align-items: center;
 }
 nav ul p{
-	font-size: 22px;
-	font-style: italic;
-	color:rgba(255,255,255,0.6);
-	margin-left: -300px;
+	font-size: 25px;
+	font-style: tahoma, verdana;
+	color: white
+	margin-left: -700px;
+  margin-right: 100px;
 }
 
 nav li {
@@ -141,7 +142,7 @@ main h1{
 	border: 0.2px solid rgba(255,255,255,0.1);
 	width:100%;
 	text-align: center;
-	font-size: 35px;
+	font-size: 50px;
 }
 footer {
 	/* background-color: #333; */
