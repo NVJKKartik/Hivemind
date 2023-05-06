@@ -129,7 +129,7 @@ main {
 }
 
 .pdf{
-	position: fixed;
+	position: absolute;
 	left:310px;
 }
 
