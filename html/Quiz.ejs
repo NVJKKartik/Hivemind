@@ -7,22 +7,7 @@
   </head>
   <body>
     <header>
-      <nav>
-        <div id="mySidenav" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="/"><i class="fa fa-fw fa-home"> </i>Home</a>
-          <a href="/html/StudyGroup.html"><i class="fa fa-fw fa-search"></i>Search</a>
-          <a href="/Resources"><i class="fa fa-fw fa-envelope"></i>Resources</a>
-          <a href="/ContactUs"><i class="fa fa-fw fa-user"></i>Contact Us</a>
-        </div>
-        
-        <div class="container" onclick="openNav()">
-          <div class="bar1"></div>
-          <div class="bar2"></div>
-          <div class="bar3"></div>
-    <p>MENU</p>
-        </div>
-      </nav>
+     
     </header>
     
     <main>
@@ -52,6 +37,7 @@
     </footer>
     
     <script>
+<<<<<<< Updated upstream
       $("input:radio").attr("checked", false);
 
 const topicForm = document.getElementById('topic-form');
@@ -63,6 +49,9 @@ topicForm.addEventListener('submit', (event) => {
   const selectedTopic = topicForm.querySelector('input[name="topic"]:checked').value;
   window.location.href = `/${selectedTopic}quiz`;
 });
+=======
+    var form = document.getElementById('topic-form');
+>>>>>>> Stashed changes
 
     form.addEventListener('submit', function(event) {
       event.preventDefault(); 
@@ -81,18 +70,6 @@ topicForm.addEventListener('submit', (event) => {
         alert('Please select a topic to start the quiz.');
       }
     });
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-}
-
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-
-function myFunction(x) {
-    x.classList.toggle("change");
-}
     </script>
   </body>
 </html>

@@ -10,11 +10,45 @@ body {
     background-image: url("/images/dash_back.jpg");
   }
 
-  nav a{
-    display: inline-block;
-	padding: 10px 15px;
+   
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+	color:white
+	/* background-color: #333; */
+}
+header img{
+	width: 100px;
+	height: 100px;
+	padding-left: 4%;
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+nav ul p{
+	font-size: 25px;
+	font-style: tahoma, verdana;
+	color: rgb(108, 99, 99);
+	margin-left: -300px;
+  margin-right: 100px;
+}
+
+nav li {
+	margin-right: 1em;
+}
+
+nav a {
+	display: flex;
+	padding: 20px 32px;
 	border: 0;
 	text-decoration: none;
+  font-family: tahoma;
 	border-radius: 20px;
 	background-color: rgba(255,255,255,0.1);
 	border: 1px solid rgba(255,255,255,0.1);
@@ -24,41 +58,11 @@ body {
 	letter-spacing: 2px;
 	cursor: pointer;
 	text-transform: uppercase;
+	
   }
-
-  nav a:hover{
-    background-color: rgba(255,255,255,0.2);
-  }
-  
-  header {
-    /* background-color: #333; */
-    color: #FFF;
-    padding: 20px;
-  }
-  
-  header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    margin-right: 20px;
-  }
-  
-  nav ul li:last-child {
-    margin-right: 0;
-  }
-  
-  nav ul li a {
-    color: #FFF;
+ 
+nav a:hover {
+	background-color: rgba(255,255,255,0.2);
   }
   
   main {
@@ -190,6 +194,7 @@ body {
   }
   
   .footer-container {
+    margin-left: 550px;
     display: flex;
     justify-content: space-between;
     align-items: center;
