@@ -28,6 +28,7 @@ var upload = multer({ storage: storage })
 // Initialize Firebase Admin SDK
 const serviceAccount = require('./hivemind-382804-firebase-adminsdk-pdnb4-f3dcffdd7a.json');
 const { Timestamp } = require("mongodb");
+const { NULL } = require("node-sass");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   storageBucket: 'gs://hivemind-382804.appspot.com/',
@@ -88,8 +89,13 @@ app.post("/SignUp", upload.single('img'), async (req, res) => {
   });
   res.redirect("/");
 });
-
-app.post("/html/PdfViewer.ejs", upload.single('myPdf'), async (req, res) => {
+app.get("/PdfViewer", (req,res)=>{
+  if(req.method == 'GET')
+  {
+    res.redirect("/Upload");
+  }
+})
+app.post("/PdfViewer", upload.single('myPdf'), async (req, res) => {
     try {
         const pdf = fs.readFileSync(req.file.path);
 
@@ -169,16 +175,17 @@ app.get("/pdf/:id", async (req, res) => {
 app.get("/uploaded_material", isAuthenticated,  async (req, res) => {
   try {
     const pdfs = await pdfSchema.find({ username: req.user.username }).sort({ uploadDate: -1 });
-    res.render("uploaded_material", { pdfs });
+    if(pdfs.length === 0){
+      res.redirect("/Upload");
+    } else{
+      res.render("uploaded_material", { pdfs });
+    }
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal server error");
   }
 });
 
-app.get('/PdfViewer', async (req, res) => {
-  res.render('PdfViewer', { pdfId: req.query.id });
-});
 
 
 app.get('/Discussion', isAuthenticated, async (req, res) => {
@@ -245,19 +252,24 @@ app.get("/Settings", isAuthenticated, (req, res) => {
   res.render("Settings", req.user);
 });
 
-app.post("/Settings", (req, res) => {
-  update(req, res);
+app.post("/Settings", upload.single('img'), async (req, res) => {
+
+  const username = req.body.username;
+  req.user.name = req.body.name || req.user.name;
+  req.user.username = req.body.email || req.user.username;
+  req.user.password = req.body.password || req.user.password;
+  req.user.notifications = req.body.notifications || req.user.notifications;
+    req.user.img = fs.readFileSync("uploads/" + req.file.filename);
+  
+  await req.user.save(); 
   res.redirect("/Profile");
 });
+
 
 app.get("/Upload", isAuthenticated, (req, res) => {
   res.render("UploadPage");
 });
 
-async function update(req, res) {
-    await User.updateOne({username: req.user.username}, req.body);
-    await req.user.save();
-}
 
 app.listen(3000, () => {
   console.log("listening on 3000");
