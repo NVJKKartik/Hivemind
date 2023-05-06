@@ -15,6 +15,7 @@ header a {
 }
 
 
+
 .sidenav {
     background-image: url("/images/dash_back.jpg");
       height: 100%; 
@@ -137,8 +138,10 @@ main {
 	padding: 20px;
 }
 main h2{
+	margin-left: 130px;
 	text-align: center;
 	display: flex;
+	font-family: tahoma;
 	padding: 24px 450px;
 	border: 0;
 	text-decoration: none;
