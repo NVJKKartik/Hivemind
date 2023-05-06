@@ -99,37 +99,33 @@ h2 {
 }
 
 .study-group {
+	text-decoration: none;
 	margin-bottom: 50px;
 }
 
 .study-group p{
 	color: white;
+	text-decoration: none;
+	color: rgba(255,255,255,0.8);
 }
 .study-group h2{
 	font-weight: 800;
 	font-family: tahoma;
 	margin-bottom: 25px;
 	padding: 15px 25px;
-	
 	width:100%;
 	color:bisque;
 }
 
-.study-group ul {
-	margin-bottom: 25px;
-	padding: 15px 25px;
-	font-family: tahoma;
-	background-color: rgba(255,255,255,0.1);
-	border: 0.2px solid rgba(255,255,255,0.1);
-	width:100%;
-	color:bisque;
+.study-group ul a{
+	font-size: 20px;
+	color: rgb(250, 250, 250);
+	text-decoration: none;
+}
+.study-group ul a:hover{
+	text-decoration: underline;
 }
 
-.study-group li {
-	list-style: none;
-	margin: 0 0 10px 0;
-	color:white;
-}
 .quiz-history h2{
 	margin-bottom: 25px;
 	padding: 15px 25px;

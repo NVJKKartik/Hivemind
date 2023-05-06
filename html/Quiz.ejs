@@ -52,6 +52,7 @@
     </footer>
     
     <script>
+<<<<<<< Updated upstream
       $("input:radio").attr("checked", false);
 
 const topicForm = document.getElementById('topic-form');
@@ -63,7 +64,27 @@ topicForm.addEventListener('submit', (event) => {
   const selectedTopic = topicForm.querySelector('input[name="topic"]:checked').value;
   window.location.href = `/${selectedTopic}quiz`;
 });
+=======
+      var form = document.getElementById('topic-form');
+>>>>>>> Stashed changes
 
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      
+      var selectedTopic = document.querySelector('input[name="topic"]:checked');
+      
+      if (selectedTopic) {
+        if (selectedTopic.value === 'maths') {
+          window.location.href = 'mathsquiz';
+        } else if (selectedTopic.value === 'science') {
+          window.location.href = 'sciencequiz';
+        } else if (selectedTopic.value === 'cs') {
+          window.location.href = 'csquiz';
+        }
+      } else {
+        alert('Please select a topic to start the quiz.');
+      }
+    });
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
 }

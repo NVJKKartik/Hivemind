@@ -22,6 +22,15 @@ ul {
     border: 1px solid rgba(255,255,255,0.1);
     backdrop-filter: blur(30px);
 }
+.upload{
+  margin-left: 550px;
+  font-size: 20px;
+  font-family:Tahoma;
+  text-align:center;
+}
+.upload:hover{
+  text-decoration: underline;
+}
 li {
     padding: 10px;
     border-bottom: 0.5px solid #ccc;
@@ -40,6 +49,7 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
 
 .sidenav {
 	background-image: url("/images/dash_back.jpg");

@@ -27,8 +27,8 @@
     <% pdfs.forEach((pdf) => { %>
       <li><a href="/pdf/<%= pdf._id %>"><%= pdf.filename %></a></li>
     <% }) %>
-      <li><a href="/Upload">Upload New</a></li>
   </ul>
+  <a href="/Upload" class="upload">Upload a New Study Material</a>
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
