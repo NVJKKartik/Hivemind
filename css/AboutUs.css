@@ -1,7 +1,7 @@
 /* Global Styles */
 
 body {
-    font-family: tahoma, sans-serif;
+    font-family: tahoma, arial;
     margin: 0;
     color:white;
     background-image: url("/images/dash_back.jpg");
@@ -119,12 +119,14 @@ body {
   
   .developer h3 {
     font-size: 24px;
+    font-family: tahoma;
     font-weight: 700;
     margin-bottom: 10px;
   }
   
   .developer p {
     font-size: 18px;
+    font-family: tahoma;
     font-weight: 400;
     margin: 0;
   }
@@ -162,12 +164,13 @@ body {
     padding: 25px 40px;
     border: 1 dashed rgba(255,255,255,0.1);
     text-decoration: none;
+    font-family: tahoma;
     border-radius: 0px;
     /* background-color: rgba(255,255,255,0.1); */
     /* border: 1px solid rgba(255,255,255,0.1); */
     backdrop-filter: blur(30px);
     color: rgba(255,255,255,0.8);
-    font-size: 18px;
+    font-size: 24px;
     letter-spacing: 2px;
   }
   
