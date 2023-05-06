@@ -318,7 +318,7 @@ app.use(function(req, res, next) {
   res.status(404);
 
   // redirect to custom error page
-  res.render('/404');
+  res.render('errorpage');
 });
 
 const port = process.env.PORT || 3000;
