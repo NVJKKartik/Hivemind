@@ -52,7 +52,6 @@
     </footer>
     
     <script>
-<<<<<<< Updated upstream
       $("input:radio").attr("checked", false);
 
 const topicForm = document.getElementById('topic-form');
@@ -64,9 +63,6 @@ topicForm.addEventListener('submit', (event) => {
   const selectedTopic = topicForm.querySelector('input[name="topic"]:checked').value;
   window.location.href = `/${selectedTopic}quiz`;
 });
-=======
-      var form = document.getElementById('topic-form');
->>>>>>> Stashed changes
 
     form.addEventListener('submit', function(event) {
       event.preventDefault(); 
