@@ -19,6 +19,7 @@
     <script src="https://webgazer.cs.brown.edu/webgazer.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script>
     <script>
+      var audio = new Audio("../../../images/Pols Aa Gayi Pols.mp3")
       webgazer.setGazeListener(function(data, elapsedTime) {
       if (data == null) {
         return;
@@ -26,14 +27,25 @@
       var xprediction = data.x; //these x coordinates are relative to the viewport
       var yprediction = data.y; //these y coordinates are relative to the viewport
       if (yprediction < 0 || xprediction < 0 || xprediction > 1710) {
-        console.log(xprediction, yprediction);
+        audio.play();
       };
+      webgazer.showPredictionPoints(false);
     }).begin();
+    function toggleCE(){
+      var button = document.getElementById("CE-toggle");
+        if (button.innerText === "Disable Concentration Enhancer") {
+          webgazer.pause();
+          button.innerText = "Enable Concentration Enhancer";
+        } else {
+          webgazer.resume();
+          button.innerText = "Disable Concentration Enhancer";
+        }
+      }
     </script>
 		<nav>
             <div id="mySidenav" class="sidenav">
               <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-              <a href="/html/HomePage.html"><i class="fa fa-fw fa-home"> </i>Home</a>
+              <a href="/"><i class="fa fa-fw fa-home"> </i>Home</a>
               <a href="/html/StudyGroup.html"><i class="fa fa-fw fa-search"></i>Search</a>
               <a href="/html/Resources.html"><i class="fa fa-fw fa-envelope"></i>Resources</a>
               <a href="/html/ContactUs.html"><i class="fa fa-fw fa-user"></i>Contact Us</a>
@@ -55,6 +67,7 @@
     <div id="notepad" class="notepad"></div>
   </div>
   <div id="notepad-toolbar" class="notepad-toolbar">
+    <button id="CE-toggle" class="CE-toggle" onclick="toggleCE()">Disable Concentration Enhancer</button>
     <button id="notepad-toggle" class="notepad-toggle" onclick="toggleNotepad()">Toggle Notepad</button>
     <button id="save-button" class="save-button" onclick="downloadNotes()">Save</button>
   </div>
@@ -98,15 +111,6 @@
   var notes = quill.getText(); // Get the text from the notepad
   var blob = new Blob([notes], {type: "text/plain;charset=utf-8"}); // Create a blob with the text
   saveAs(blob, "notes.txt"); // Use FileSaver.js to download the blob as a txt file
-}
-  </script>
-  
-  <script>
-    var prediction = webgazer.getCurrentPrediction();
-if (prediction) {
-	var x = prediction.x;
-	var y = prediction.y;
-  console.log(x, y);
 }
   </script>
 
