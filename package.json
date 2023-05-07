@@ -4,7 +4,7 @@
   "description": "",
   "main": "javascript/server.js",
   "scripts": {
-    "start": "node --ext js,ejs,html,css javascript/server.js",
+    "start": "node javascript/server.js",
     "dev": "nodemon --ext js,ejs,html,css javascript/server.js"
   },
   "author": "",
