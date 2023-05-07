@@ -12,7 +12,9 @@
     <script src="https://webgazer.cs.brown.edu/webgazer.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script>
     <script>
-      var audio = new Audio("../../../images/Pols Aa Gayi Pols.mp3")
+      var audio = new Audio("../../../images/Alarm.mp3")  
+var isLookingAway = false; // variable to track if user is looking away
+var timeoutId; // variable to track the timer
       webgazer.setGazeListener(function(data, elapsedTime) {
       if (data == null) {
         return;
@@ -20,10 +22,20 @@
       var xprediction = data.x; //these x coordinates are relative to the viewport
       var yprediction = data.y; //these y coordinates are relative to the viewport
       if (yprediction < 0 || xprediction < 0 || xprediction > 1710) {
+    if (!isLookingAway) { // if the user was not looking away before
+      timeoutId = setTimeout(function() { // start the timer
         audio.play();
-      };
-      webgazer.showPredictionPoints(false);
-    }).begin();
+      }, 3000); // wait for 5 seconds before playing the audio
+      isLookingAway = true; // set the variable to true
+    }
+  } else {
+    if (isLookingAway) { // if the user was looking away before
+      clearTimeout(timeoutId); // clear the timer
+      isLookingAway = false; // set the variable to false
+    }
+  }
+}).begin();
+    webgazer.showPredictionPoints(false);
     function toggleCE(){
       var button = document.getElementById("CE-toggle");
         if (button.innerText === "Disable Concentration Enhancer") {

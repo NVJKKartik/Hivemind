@@ -137,13 +137,12 @@ footer {
   padding: 10px;
   bottom: 0;
   left: 0;
-  margin-left: 750px;
   width: 100%;
+  text-align: center;
   border: 1px dashed rgba(255,255,255,0.5);
 }
 
 .footer-container {
-  display: flex;
   justify-content: space-between;
 }
 
