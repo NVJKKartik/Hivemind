@@ -4,8 +4,8 @@
   "description": "",
   "main": "javascript/server.js",
   "scripts": {
-    "start": "nodemon --ext js,ejs,html,css javascript/server.js",
-    "sass": "node-sass scss -o css"
+    "start": "node --ext js,ejs,html,css javascript/server.js",
+    "dev": "nodemon --ext js,ejs,html,css javascript/server.js"
   },
   "author": "",
   "license": "ISC",
