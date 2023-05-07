@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const port = process.env.PORT || 3000;
 const { connectMongoose, User, pdfSchema, Message } = require("./database.js");
 const passport = require("passport");
 const {
@@ -329,8 +330,6 @@ app.use(function(req, res, next) {
   // redirect to custom error page
   res.render('errorpage');
 });
-
-const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
