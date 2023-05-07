@@ -87,10 +87,13 @@ app.post("/SignUp", upload.single('img'), async (req, res) => {
     username: req.body.username,
     password: req.body.password
   });
+
+  if (req.file) {
   const filesToDelete = [];
   const filepathToDelete = "uploads/" + req.file.filename
   filesToDelete.push(filepathToDelete);
-  deleteFiles(filesToDelete)
+  deleteFiles(filesToDelete);
+  };
   res.redirect("/");
 });
 
@@ -226,10 +229,12 @@ app.post('/Discussion', isAuthenticated, upload.single('img'), async (req, res) 
     // Save the message to the database
     await newMessage.save();
 
+    if (req.file) {
     const filesToDelete = [];
     const filepathToDelete = "uploads/" + req.file.filename
     filesToDelete.push(filepathToDelete);
     deleteFiles(filesToDelete)
+    };
 
     // Render the discussion view with the new message and all the existing messages
     res.redirect('/Discussion');
