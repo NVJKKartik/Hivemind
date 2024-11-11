@@ -27,7 +27,7 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 
 // Initialize Firebase Admin SDK
-const serviceAccount = require('./hivemind-382804-firebase-adminsdk-pdnb4-f3dcffdd7a.json');
+const serviceAccount = require('./hivemind-382804-firebase-adminsdk-pdnb4-3898724047.json');
 const { Timestamp } = require("mongodb");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
